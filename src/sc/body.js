@@ -5,8 +5,6 @@ export const Container = styled.div`
     ${fonts}
 
     font-family: 'Lane';
-    width: 70%;
-    margin: 2vh auto;
     padding: 1vh;
-    background-color: #eee;
+    margin: 2vh auto;
 `

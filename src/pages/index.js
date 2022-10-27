@@ -9,4 +9,10 @@ const IndexPage = () => {
     )
 }
 
+export const Head = () => {
+    return(
+        <title>Hi! This is Shivansh</title>
+    )
+}
+
 export default IndexPage

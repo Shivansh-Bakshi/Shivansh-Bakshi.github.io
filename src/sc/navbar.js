@@ -6,26 +6,26 @@ export const Container = styled.section`
     ${fonts}
 
     width: 100%;
-    height: 7vh;
+    height: 7%;
     background: black;
     left: 0;
     box-shadow: 0 5px 5px 2px rgba(0, 0, 0, .2);
     overflow: hidden;
-    font-family: 'Source Code Pro'
+    font-family: 'Source Code Pro';
 `
 
 export const PageTitle = styled.h3`
-    font-size: 2vh;
+    font-size: 1.2em;
     color: #ccc;
     float: left;
-    padding: 2.5vh;
+    padding: 2.3vh;
     background-color: inherit;
 `
 export const Nav = styled.nav`
     float: right;
     align-content: center;
     list-style-type: none;
-    padding: 2.5vh;
+    padding: 2.3vh;
     background-color: inherit;
 `
 
@@ -45,6 +45,7 @@ export const ListItem = styled.li`
     text-decoration: none;
     color: #ccc;
     background-color: inherit;
+    padding-left: 2vh;
     &:hover {
         ${PageLink} {
             color:#eee;
