@@ -3,11 +3,13 @@ import { Container } from '../sc/body';
 import { GlobalStyle } from '../sc/global';
 import Navbar from './navbar';
 
-const Layout = ({pageTitle, children}) => {
+const Layout = ({children}) => {
+    
+
     return(
         <div>
             <GlobalStyle />
-            <Navbar pageTitle={pageTitle}></Navbar>
+            <Navbar />
             <Container>
                 {children}
             </Container>

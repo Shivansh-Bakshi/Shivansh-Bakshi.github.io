@@ -6,5 +6,4 @@ export const Container = styled.div`
 
     font-family: 'Lane';
     padding: 1vh;
-    margin: 2vh auto;
 `
