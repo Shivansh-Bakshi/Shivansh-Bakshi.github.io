@@ -2,7 +2,8 @@
 
 ## TODO:
 - [x] 404 Page
-- [ ] Intro Card
+- [x] Intro Card
+- [x] Add Footer
 - [ ] Profile below Intro Card
 - [ ] Contact Page
 - [ ] Blog Posts Page

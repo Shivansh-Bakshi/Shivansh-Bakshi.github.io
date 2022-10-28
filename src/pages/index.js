@@ -1,14 +1,15 @@
 import * as React from 'react';
 import Layout from '../components/layout';
 import Typewriter from "typewriter-effect";
-import { Container, IntroBody, IntroFooter, IntroHeader, IntroMessage } from '../sc/intro';
+import { Container, Body, Footer, Header, Message, Waves } from '../sc/intro';
+import Wave from 'react-wavify';
 
 const IntroComponent = () => {
     return(
         <Container>
-            <IntroMessage>
-                <IntroHeader>Hi! I am</IntroHeader>
-                <IntroBody>
+            <Message>
+                <Header>Hi! I am</Header>
+                <Body>
                     <Typewriter
                     onInit={(typewriter) => {
                         typewriter
@@ -16,9 +17,9 @@ const IntroComponent = () => {
                         .start()
                     }}
                     />
-                </IntroBody>
-                <IntroFooter>An Avid Computer Science student, who loves to create things</IntroFooter>
-            </IntroMessage>
+                </Body>
+                <Footer>Undergrad | CS | Developer | Pianist</Footer>
+            </Message>
         </Container>
     )
 }

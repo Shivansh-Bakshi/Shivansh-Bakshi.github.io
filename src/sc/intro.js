@@ -5,15 +5,20 @@ export const Container = styled.div`
     ${fonts}
 
     height: 93vh;
-    /* background-size: cover; */
-    /* background-repeat: no-repeat; */
     background-color: black;
     color: white;
     font-family: 'Lane';
     position: relative;
 `
 
-export const IntroMessage = styled.div`
+export const Waves = styled.div`
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    background-color: inherit;
+`
+
+export const Message = styled.div`
     font-size: calc(32px + 5vw);
     text-align: left;
     position: absolute;
@@ -26,18 +31,19 @@ export const IntroMessage = styled.div`
     background-color: inherit;
 `
 
-export const IntroHeader = styled.div`
+export const Header = styled.div`
     margin-left: 2vh;
     font-size: calc(23px + 1vw);
     background-color: inherit;
     color: white;
 `
-export const IntroBody = styled.div`
+export const Body = styled.div`
     padding-left: 2vh;
     color: black;
+    background-color: #eee;
 `
 
-export const IntroFooter = styled.div`
+export const Footer = styled.div`
     margin-left: 2vh;
     font-size: calc(16px + 1vw);
     background-color: inherit;
