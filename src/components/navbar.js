@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container, PageLink, Nav, UnorderedList, ListItem } from '../sc/navbar';
+import { Container, PageLink, Nav, UnorderedList, ListItem, ResumeLink } from '../sc/navbar';
 
 const Navbar = ( {fixedToTop} ) => {
     return(
@@ -7,7 +7,7 @@ const Navbar = ( {fixedToTop} ) => {
             <Nav>
                 <UnorderedList>
                     <ListItem><PageLink to='/'>Home</PageLink></ListItem>
-                    <ListItem><PageLink to='/contact'>Contact</PageLink></ListItem>
+                    <ListItem><ResumeLink href='Resume.pdf'>Resume</ResumeLink></ListItem>
                 </UnorderedList>
             </Nav>
         </Container>

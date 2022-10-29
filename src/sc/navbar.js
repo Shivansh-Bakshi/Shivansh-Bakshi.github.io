@@ -37,6 +37,21 @@ export const PageLink = styled(Link)`
     color: #ccc;
     padding: calc(0.5vw + 0.5vh);
     background-color: inherit;
+    &:hover {
+        color: #eee;
+        background: #333;
+    }
+`
+
+export const ResumeLink = styled.a`
+    text-decoration: none;
+    color: #ccc;
+    padding: calc(0.5vw + 0.5vh);
+    background-color: inherit;
+    &:hover {
+        color: #eee;
+        background: #333;
+    }
 `
 
 export const ListItem = styled.li`
@@ -45,10 +60,4 @@ export const ListItem = styled.li`
     color: #ccc;
     background-color: inherit;
     padding-right: 2vh;
-    &:hover {
-        ${PageLink} {
-            color:#eee;
-            background-color: #333;
-        }
-    }
 `

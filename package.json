@@ -28,5 +28,8 @@
     "react-wavify": "^1.6.3",
     "styled-components": "^5.3.6",
     "typewriter-effect": "^2.19.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
