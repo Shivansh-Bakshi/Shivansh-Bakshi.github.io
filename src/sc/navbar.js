@@ -12,6 +12,7 @@ export const Container = styled.section`
     overflow: hidden;
     font-family: 'Source Code Pro';
     font-size: calc(16px + 0.3vh);
+    z-index: 1;
 
     ${props => props.top && css`
         position: fixed;

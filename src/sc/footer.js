@@ -7,7 +7,6 @@ export const Container = styled.div`
     width: 100%;
     height: 25vh;
     background-color: #f2dc5d;
-    /* color: #3b3b3b; */
     color: #a38c05;
     font-family: 'Source Code Pro';
     font-size: calc(13px + 0.2vw);
