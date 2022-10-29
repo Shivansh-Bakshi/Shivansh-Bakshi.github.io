@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkshivansh_bakshi_site=self.webpackChunkshivansh_bakshi_site||[]).push([[903],{9023:function(e,n,t){t.r(n),t.d(n,{Head:function(){return a}});var s=t(7294),u=t(5663);n.default=function(){return s.createElement(u.Z,null)};var a=function(){return s.createElement("title",null,"Shivansh Bakshi | Resume")}}}]);
+//# sourceMappingURL=component---src-pages-resume-js-d93d0f7057bde1fd411c.js.map
