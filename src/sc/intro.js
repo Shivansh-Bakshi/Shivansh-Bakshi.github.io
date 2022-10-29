@@ -24,10 +24,7 @@ export const Message = styled.div`
     position: absolute;
     bottom: 10%;
     width: 100%;
-    /* position: relative;
-    top: 50%;
-    transform: translateY(-50%); */
-    
+
     background-color: inherit;
 `
 

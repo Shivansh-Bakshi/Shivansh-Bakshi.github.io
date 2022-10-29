@@ -1,8 +1,11 @@
 import * as React from 'react';
+import { Container } from '../sc/card';
 
-const Card = () => {
+const Card = ({ children }) => {
     return(
-        <p>Card</p>
+        <Container>
+            {children}
+        </Container>
     )
 }
 

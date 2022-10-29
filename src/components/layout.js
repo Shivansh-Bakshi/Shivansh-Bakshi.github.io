@@ -4,12 +4,12 @@ import { GlobalStyle } from '../sc/global';
 import Footer from './footer';
 import Navbar from './navbar';
 
-const Layout = ({children}) => {
+const Layout = ({ navbarFixedToTop = true, children }) => {
     return(
         <div>
             <GlobalStyle />
-            <Navbar />
-            <Container>
+            <Navbar fixedToTop={navbarFixedToTop}/>
+            <Container navbarFixed={navbarFixedToTop}>
                 {children}
             </Container>
             <Footer />

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Container, PageLink, Nav, UnorderedList, ListItem } from '../sc/navbar';
 
-const Navbar = () => {
+const Navbar = ( {fixedToTop} ) => {
     return(
-        <Container>
+        <Container top={fixedToTop}>
             <Nav>
                 <UnorderedList>
                     <ListItem><PageLink to='/'>Home</PageLink></ListItem>

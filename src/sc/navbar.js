@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "gatsby";
 import fonts from "../fonts/fonts";
 
@@ -11,6 +11,12 @@ export const Container = styled.section`
     left: 0;
     overflow: hidden;
     font-family: 'Source Code Pro';
+    font-size: calc(16px + 0.3vh);
+
+    ${props => props.top && css`
+        position: fixed;
+        top: 0;
+    `}
 `
 
 export const Nav = styled.nav`

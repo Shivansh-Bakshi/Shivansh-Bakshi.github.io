@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import fonts from "../fonts/fonts";
 
 export const Container = styled.div`
@@ -6,4 +6,9 @@ export const Container = styled.div`
 
     font-family: 'Lane';
     padding: 1vh;
+    background-color: #eee;
+
+    ${props => props.navbarFixed && css`
+        padding-top: 8vh;
+    `}
 `

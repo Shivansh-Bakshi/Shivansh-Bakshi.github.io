@@ -1,12 +1,13 @@
 import * as React from 'react';
 import Layout from '../components/layout';
 import Typewriter from "typewriter-effect";
-import { Container, Body, Footer, Header, Message, Waves } from '../sc/intro';
-import Wave from 'react-wavify';
+import { Container, Body, Footer, Header, Message } from '../sc/intro';
+import Card from '../components/card';
+import { useVisibility } from '../utils/hooks';
 
-const IntroComponent = () => {
+const IntroComponent = ({ visibleRef }) => {
     return(
-        <Container>
+        <Container ref={visibleRef}>
             <Message>
                 <Header>Hi! I am</Header>
                 <Body>
@@ -25,11 +26,38 @@ const IntroComponent = () => {
 }
 
 const IndexPage = () => {
+    const [isIntroVisible, introElementRef] = useVisibility();
+
     return(
         <div>
-            <IntroComponent />
-            <Layout>
-                <p>Hi!</p>
+            <IntroComponent visibleRef={introElementRef}/>
+            <Layout navbarFixedToTop={!isIntroVisible}>
+                <Card>
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                    Lorem ipsum dolor sit amet. Ut optio alias et ducimus sint est quae iure rem consequatur enim qui officiis quaerat. Qui tenetur libero est dolores dolor est optio amet eum ipsam impedit? Et quia temporibus est reprehenderit porro sit corporis doloremque qui pariatur commodi! In explicabo architecto ad dolores provident ea vero placeat.
+                </Card>
             </Layout>
         </div>
 
