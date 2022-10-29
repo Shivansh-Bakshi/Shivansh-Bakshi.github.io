@@ -6,7 +6,6 @@ import Card from '../components/card';
 import { useVisibility } from '../utils/hooks';
 import { Company, DateFromTo, Description, Details, ImageContainer, Job, MetaDeta, Position, VideoContainer} from '../sc/experiences';
 import { PlainCard, Title } from '../sc/card';
-import { Link } from 'gatsby';
 
 import { StaticImage } from 'gatsby-plugin-image';
 import { Project, ProjectDate, ProjectDescription, ProjectTitle } from '../sc/projects';
@@ -168,7 +167,7 @@ const IndexPage = () => {
                             Developed a desktop app using QT/C++ that processes real-time audio signals and runs Yin-FFT on them to
                             create MIDI files for monophonic melodies.<br/>
                             <br />
-                            Git Repository: <Link to='https://github.com/Shivansh-Bakshi/NoteDetection'>Click Here</Link>
+                            Git Repository: <a href='https://github.com/Shivansh-Bakshi/NoteDetection'>Click Here</a>
                             <VideoContainer>
                                 <iframe 
                                     width="560" 
