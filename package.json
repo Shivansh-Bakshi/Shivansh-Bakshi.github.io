@@ -1,6 +1,7 @@
 {
   "name": "shivansh-bakshi-site",
   "version": "1.0.0",
+  "homepage": "https://shivanshbakshi.dev",
   "private": true,
   "description": "shivansh-bakshi-site",
   "author": "Shivansh",
@@ -12,7 +13,8 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "deploy": "gatsby build && gh-pages -d public"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.7",
