@@ -6,8 +6,10 @@ import Card from '../components/card';
 import { useVisibility } from '../utils/hooks';
 import { Company, DateFromTo, Description, Details, ImageContainer, Job, MetaDeta, Position, VideoContainer} from '../sc/experiences';
 import { PlainCard, Title } from '../sc/card';
+import { Link } from 'gatsby';
 
 import { StaticImage } from 'gatsby-plugin-image';
+import { Project, ProjectDate, ProjectDescription, ProjectTitle } from '../sc/projects';
 
 const IntroComponent = ({ visibleRef }) => {
     return(
@@ -129,23 +131,86 @@ const IndexPage = () => {
                             provide real-time updates on the status of orders and shipment.
                             
                             <VideoContainer>
-                            <iframe 
-                                width="560" 
-                                height="315" 
-                                src="https://www.youtube.com/embed/WaC0acVot2A" 
-                                title="YouTube video player" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen="allowfullscreen"
-                                mozallowfullscreen="mozallowfullscreen" 
-                                msallowfullscreen="msallowfullscreen" 
-                                oallowfullscreen="oallowfullscreen" 
-                                webkitallowfullscreen="webkitallowfullscreen"
+                                <iframe 
+                                    width="560" 
+                                    height="315" 
+                                    src="https://www.youtube.com/embed/WaC0acVot2A" 
+                                    title="Automated Warehouse Demonstration" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen="allowfullscreen"
+                                    mozallowfullscreen="mozallowfullscreen" 
+                                    msallowfullscreen="msallowfullscreen" 
+                                    oallowfullscreen="oallowfullscreen" 
+                                    webkitallowfullscreen="webkitallowfullscreen"
                                 ></iframe>
                             </VideoContainer>
-
                         </Description>
                     </Job>
+                </Card>
+
+                <Card>
+                    <Title>Projects</Title>
+                    <Project>
+                        <ProjectTitle>My Website</ProjectTitle>
+                        <ProjectDate>October 2022</ProjectDate>
+                        <ProjectDescription>
+                            Started developing my personal website in React JS with Gatsby for fast, efficient static performance.
+                            The website currently acts as a portfolio website with features planned for the future as mentioned 
+                            previously.
+                        </ProjectDescription>
+                    </Project>
+
+                    <Project>
+                        <ProjectTitle>Raw Audio to MIDI Convertor</ProjectTitle>
+                        <ProjectDate>2021</ProjectDate>
+                        <ProjectDescription>
+                            Developed a desktop app using QT/C++ that processes real-time audio signals and runs Yin-FFT on them to
+                            create MIDI files for monophonic melodies.<br/>
+                            <br />
+                            Git Repository: <Link to='https://github.com/Shivansh-Bakshi/NoteDetection'>Click Here</Link>
+                            <VideoContainer>
+                                <iframe 
+                                    width="560" 
+                                    height="315" 
+                                    src="https://www.youtube.com/embed/1x7OmF7IUi8" 
+                                    title="Note Detection Demonstration" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen="allowfullscreen"
+                                    mozallowfullscreen="mozallowfullscreen" 
+                                    msallowfullscreen="msallowfullscreen" 
+                                    oallowfullscreen="oallowfullscreen" 
+                                    webkitallowfullscreen="webkitallowfullscreen"
+                                ></iframe>
+                            </VideoContainer>
+                        </ProjectDescription>
+                    </Project>
+
+                    <Project>
+                        <ProjectTitle>Android Billing System for Factories</ProjectTitle>
+                        <ProjectDate>2021</ProjectDate>
+                        <ProjectDescription>
+                            Designed a React Native + Android studio app with custom file, permissions, and SQLite handlers to ease
+                            the billing process using templatized PDFs. Created for a friends company.
+
+                            <VideoContainer>
+                            <iframe 
+                                    width="560" 
+                                    height="315" 
+                                    src="https://www.youtube.com/embed/CMZPWKDPfRE" 
+                                    title="Android Billing App" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen="allowfullscreen"
+                                    mozallowfullscreen="mozallowfullscreen" 
+                                    msallowfullscreen="msallowfullscreen" 
+                                    oallowfullscreen="oallowfullscreen" 
+                                    webkitallowfullscreen="webkitallowfullscreen"
+                                ></iframe>
+                            </VideoContainer>
+                        </ProjectDescription>
+                    </Project>
                 </Card>
             </Layout>
         </div>

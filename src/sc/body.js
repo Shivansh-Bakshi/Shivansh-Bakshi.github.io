@@ -4,7 +4,7 @@ import fonts from "../fonts/fonts";
 export const Container = styled.div`
     ${fonts}
 
-    font-family: 'Source Code Pro';
+    font-family: 'Mulish';
     padding: 1vh;
     background-color: #eee;
 

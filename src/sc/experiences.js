@@ -16,7 +16,7 @@ export const ImageContainer = styled.div`
     max-height: calc(3 * (16px + 0.3vw) + 1vh);
     max-width: calc(3 * (16px + 0.3vw) + 1vh);  
     margin-left: auto;
-    margin-right: 1vw;
+    margin-right: 2.3vw;
 `
 
 export const Details = styled.div`
