@@ -14,7 +14,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build && : > CNAME && echo www.shivanshbakshi.dev >> ./public/CNAME && gh-pages -d public"
+    "deploy": "gatsby build && : > ./public/CNAME && echo www.shivanshbakshi.dev >> ./public/CNAME && gh-pages -d public"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.7",
