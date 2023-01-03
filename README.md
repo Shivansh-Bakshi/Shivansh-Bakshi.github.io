@@ -1,10 +1,12 @@
-# Making my website in React + Gatsby
+# Personal Website
 
-## TODO:
-- [x] 404 Page
-- [x] Intro Card
-- [x] Add Footer
-- [x] Profile below Intro Card
-- [ ] Contact Page
-- [ ] Blog Posts Page
-- [ ] Music Page
+
+## Run in Development Mode
+```shell
+npm run develop
+```
+
+## Publish to GitHub Pages and Deploy Changes
+```shell
+npm run deploy
+```
