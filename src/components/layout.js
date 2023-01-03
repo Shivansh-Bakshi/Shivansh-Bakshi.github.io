@@ -1,19 +1,23 @@
 import * as React from 'react';
-import { Container } from '../sc/body';
-import { GlobalStyle } from '../sc/global';
-import Footer from './footer';
+import { Container, GlobalStyle, Overlay } from '../styles/global';
 import Navbar from './navbar';
 
-const Layout = ({ navbarFixedToTop = true, children }) => {
+const Background = React.lazy(() => import('./background'));
+
+const Layout = ({ children }) => {
     return(
-        <div>
+        <>
             <GlobalStyle />
-            <Navbar fixedToTop={navbarFixedToTop}/>
-            <Container navbarFixed={navbarFixedToTop}>
+            <Container>
+                <Overlay />
+                <React.Suspense fallback={<div>Loading...</div>}>
+                    <Background />
+                </React.Suspense>
+                <Navbar />
+
                 {children}
             </Container>
-            <Footer />
-        </div>
+        </>
     )
 }
 
