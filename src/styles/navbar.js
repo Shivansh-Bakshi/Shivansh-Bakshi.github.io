@@ -15,7 +15,8 @@ export const LeftContainer = styled.span`
         margin-left: 0;
         top: 0;
         padding-top: 16vh;
-        background-image: linear-gradient(to right, ${colors.DARK_BLUE + transparency[95]}, transparent);
+        background-color: ${colors.DARK_BLUE};
+        /* background-image: linear-gradient(to right, ${colors.DARK_BLUE + transparency[95]}, transparent); */
         width: ${props => props.showNavbar ? "calc(100px + 10vw)" : "0px"};;
         height: 100vh;
         transition: all 0.3s ease-in;
@@ -42,10 +43,17 @@ export const LogoContainer = styled.span`
     margin-right: 60px;
     top: 20%;
 
-    @media screen and ((max-width: 1280px) or (min-width: 1600px)){
+    @media screen and (min-width: 1600px) {
         position: absolute;
         left: 50%;
         top: 20%;
+        transform: translate(-50%, 0);
+    }
+
+    @media screen and (max-width: 1280px) {
+        position: absolute;
+        left: 50%;
+        top: 30%;
         transform: translate(-50%, 0);
     }
 `
@@ -62,10 +70,11 @@ export const RightContainer = styled.span`
         margin-right: 0;
         top: 0;
         padding-top: 16vh;
-        background-image: linear-gradient(to left, ${colors.DARK_BLUE + transparency[95]}, transparent);
+        background-color: ${colors.DARK_BLUE};
+        /* background-image: linear-gradient(to left, ${colors.DARK_BLUE + transparency[95]}, transparent); */
         width: ${props => props.showNavbar ? "calc(100px + 10vw)" : "0px"};;
         height: 100vh;
-        transition: all 0.3s ease-in;
+        transition: all 0.2s ease-in;
         overflow: hidden;
         text-align: right;
     }
@@ -126,7 +135,7 @@ export const PageLink = styled(Link)`
     &.active {
         color: ${colors.RED};
         text-decoration: underline;
-        text-underline-offset: 6px;
+        text-underline-offset: 10px;
         text-decoration-color: ${colors.RED};
         text-decoration-thickness: 0.25rem;
     }
@@ -138,7 +147,7 @@ export const PageLink = styled(Link)`
             color: ${colors.LIGHT_OFF_WHITE};
             text-decoration-color: ${colors.LIGHT_OFF_WHITE};
             text-decoration: underline;
-            text-underline-offset: 6px;
+            text-underline-offset: 10px;
             text-decoration-thickness: 0.25rem;
         }   
     }
@@ -152,11 +161,19 @@ export const ResumeLink = styled(PageLink).attrs({
 const Image = styled.img`
     width: 100px;
     filter: invert(99%) sepia(95%) saturate(12%) hue-rotate(226deg) brightness(116%) contrast(87%);
+
+    @media screen and (max-width: 1280px) {
+        width: 50px;
+    }
 `
 
 export const HamburgerImage = styled(Image)`
     width: 50px;
     filter: invert(99%) sepia(95%) saturate(12%) hue-rotate(226deg) brightness(116%) contrast(87%);
+
+    @media screen and (max-width: 1280px) {
+        width: 30px;
+    }
 `
 
 export const LogoImage = styled(Image)`

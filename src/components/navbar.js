@@ -4,11 +4,21 @@ import LogoSVG from '../images/Logo.svg';
 import { NavbarContainer } from '../styles/global';
 import  RightHamburger from '../images/right_hamburger.svg';
 import  LeftHamburger from '../images/left_hamburger.svg';
-
+import { useIsOutsideClick } from '../utils/hooks';
 
 const LeftNavbar = () => {
     const [showNavbar, setShowNavbar] = React.useState(false);
+    const wrapperRef = React.useRef(null);
+    const stateRef = React.useRef()
+    stateRef.current = showNavbar;
 
+    const handleOutsideClick = () => {
+        if (showNavbar) {
+            setShowNavbar(false);
+        }
+    }
+
+    useIsOutsideClick(wrapperRef, handleOutsideClick);
     const handleShowNavbar = () => {
         setShowNavbar(!showNavbar);
     }
@@ -21,7 +31,7 @@ const LeftNavbar = () => {
                 <ListItem><PageLink to="/piano" activeClassName='active'>Piano</PageLink></ListItem>
             </UnorderedList>
         </LeftContainer>
-        <LeftMenu onClick={handleShowNavbar}>
+        <LeftMenu onClick={handleShowNavbar} ref={wrapperRef}>
             <HamburgerImage src={LeftHamburger} alt='left_hamburger' />
         </LeftMenu>
         </>
@@ -30,6 +40,17 @@ const LeftNavbar = () => {
 
 const RightNavbar = () => {
     const [showNavbar, setShowNavbar] = React.useState(false);
+    const wrapperRef = React.useRef(null);
+    const stateRef = React.useRef()
+    stateRef.current = showNavbar;
+
+    const handleOutsideClick = () => {
+        if (showNavbar) {
+            setShowNavbar(false);
+        }
+    }
+
+    useIsOutsideClick(wrapperRef, handleOutsideClick);
 
     const handleShowNavbar = () => {
         setShowNavbar(!showNavbar);
@@ -47,7 +68,7 @@ const RightNavbar = () => {
                 <ListItem><PageLink to="/contact" activeClassName='active'>Contact</PageLink></ListItem>
             </UnorderedList>
         </RightContainer>
-        <RightMenu onClick={handleShowNavbar}>
+        <RightMenu onClick={handleShowNavbar} ref={wrapperRef}>
             <HamburgerImage src={RightHamburger} alt='right_hamburger' />
         </RightMenu>
         </>
