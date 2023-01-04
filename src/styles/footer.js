@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export const FooterContainer = styled.div`
     width: 100vw;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     display: flex;
     flex-direction: column;

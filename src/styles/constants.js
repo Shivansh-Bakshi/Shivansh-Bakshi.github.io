@@ -32,3 +32,8 @@ export const transparency = {
     95: "F2",
     100: "FF", 
 }
+
+export const transitionEffects = {
+    duration: 0.3,
+    ease: [0.87, 0, 0.13, 1]
+}

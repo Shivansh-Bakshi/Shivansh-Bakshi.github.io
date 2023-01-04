@@ -17,6 +17,35 @@ import LogoSVG from '../images/Logo.svg';
 import  RightHamburger from '../images/right_hamburger.svg';
 import  LeftHamburger from '../images/left_hamburger.svg';
 import { useIsOutsideClick } from '../utils/hooks';
+import { transitionEffects } from '../styles/constants';
+
+const SubNavbar = ({ direction }) => {
+    const [showNavbar, setShowNavbar] = React.useState(false);
+    const wrapperRef = React.useRef(null);
+    const stateRef = React.useRef()
+    stateRef.current = showNavbar;
+
+    const handleOutsideClick = () => {
+        if (showNavbar) {
+            setShowNavbar(false);
+        }
+    }
+
+    useIsOutsideClick(wrapperRef, handleOutsideClick);
+    const handleShowNavbar = () => {
+        setShowNavbar(!showNavbar);
+    }
+
+    const subNavbarMenu = {
+        initial: {
+            width: '0px'
+        },
+        animate: {
+            width: showNavbar ? 'calc(100px + 10vw)' : '0px',
+        },
+        transition: transitionEffects
+    }
+}
 
 const LeftNavbar = () => {
     const [showNavbar, setShowNavbar] = React.useState(false);
@@ -35,9 +64,19 @@ const LeftNavbar = () => {
         setShowNavbar(!showNavbar);
     }
 
+    const leftNavbarMenu = {
+        initial: {
+            width: '0px'
+        },
+        animate: {
+            width: showNavbar ? 'calc(100px + 10vw)' : '0px',
+        },
+        transition: transitionEffects
+    }
+
     return(
         <>
-        <LeftContainer showNavbar={showNavbar}>
+        <LeftContainer initial="initial" animate="animate" variants={leftNavbarMenu}>
             <UnorderedList>
                 <ListItem><PageLink to="/blog" activeClassName='active'>Blog</PageLink></ListItem>
                 <ListItem><PageLink to="/piano" activeClassName='active'>Piano</PageLink></ListItem>
@@ -67,9 +106,19 @@ const RightNavbar = () => {
         setShowNavbar(!showNavbar);
     }
 
+    const rightNavbarMenu = {
+        initial: {
+            width: '0px'
+        },
+        animate: {
+            width: showNavbar ? 'calc(100px + 10vw)' : '0px',
+        },
+        transition: transitionEffects
+    }
+
     return(
         <>
-        <RightContainer showNavbar={showNavbar}>
+        <RightContainer initial="initial" animate="animate" variants={rightNavbarMenu}>
             <UnorderedList>
                 <ListItem><PageLink to="/" activeClassName='active'>Home</PageLink></ListItem>
                 <ListItem><PageLink to="/experience" activeClassName='active'>Experience</PageLink></ListItem>
