@@ -5,6 +5,8 @@ export const colors = {
     RED: "#f87060",
     DARK_BLUE: "#1c3144",
     BLACK: "#000000",
+    TEA_GREEN: "#CFFFB0",
+    YELLOW: "#FFF689",
 }
 
 export const transparency = {
