@@ -35,4 +35,14 @@ export const useIsOutsideClick = (ref, callbackFn) => {
             document.removeEventListener("mousedown", handleOutsideClick);
         }
     }, [ref, callbackFn]);
-} 
+}
+
+export const useEffectAfterFirstRender = (updateRef, callbackFn, dependencyList) => {
+    useEffect(() => {
+        if (updateRef.current) {
+            updateRef.current = false;
+            return;
+        }
+        callbackFn();
+    }, [updateRef, callbackFn, dependencyList])
+}

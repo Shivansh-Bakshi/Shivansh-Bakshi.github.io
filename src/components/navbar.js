@@ -1,7 +1,19 @@
 import * as React from 'react';
-import { LogoContainer, LeftContainer, ListItem, PageLink, RightContainer, UnorderedList, RightMenu, HamburgerImage, LeftMenu, LogoImage, ResumeLink } from '../styles/navbar';
+import { 
+    LogoContainer, 
+    LeftContainer, 
+    ListItem, 
+    PageLink, 
+    RightContainer, 
+    NavbarContainer, 
+    UnorderedList, 
+    RightMenu, 
+    HamburgerImage, 
+    LeftMenu, 
+    LogoImage, 
+    ResumeLink 
+} from '../styles/navbar';
 import LogoSVG from '../images/Logo.svg';
-import { NavbarContainer } from '../styles/global';
 import  RightHamburger from '../images/right_hamburger.svg';
 import  LeftHamburger from '../images/left_hamburger.svg';
 import { useIsOutsideClick } from '../utils/hooks';
@@ -49,7 +61,6 @@ const RightNavbar = () => {
             setShowNavbar(false);
         }
     }
-
     useIsOutsideClick(wrapperRef, handleOutsideClick);
 
     const handleShowNavbar = () => {

@@ -3,6 +3,15 @@ import { Link } from "gatsby";
 import fonts from "../fonts/fonts";
 import { colors, transparency } from "./constants";
 
+export const NavbarContainer = styled.div`
+    width: 100%;
+    height: 14%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+`
+
 export const LeftContainer = styled.span`
     position: relative;
     float: left;
@@ -16,8 +25,7 @@ export const LeftContainer = styled.span`
         top: 0;
         padding-top: 16vh;
         background-color: ${colors.DARK_BLUE};
-        /* background-image: linear-gradient(to right, ${colors.DARK_BLUE + transparency[95]}, transparent); */
-        width: ${props => props.showNavbar ? "calc(100px + 10vw)" : "0px"};;
+        width: ${props => props.showNavbar ? "calc(100px + 10vw)" : "0px"};
         height: 100vh;
         transition: all 0.3s ease-in;
         overflow: hidden;
@@ -71,7 +79,6 @@ export const RightContainer = styled.span`
         top: 0;
         padding-top: 16vh;
         background-color: ${colors.DARK_BLUE};
-        /* background-image: linear-gradient(to left, ${colors.DARK_BLUE + transparency[95]}, transparent); */
         width: ${props => props.showNavbar ? "calc(100px + 10vw)" : "0px"};;
         height: 100vh;
         transition: all 0.2s ease-in;
