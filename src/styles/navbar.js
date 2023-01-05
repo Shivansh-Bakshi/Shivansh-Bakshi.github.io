@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import fonts from "../fonts/fonts";
 import { colors, transparency } from "./constants";
-import { motion } from "framer-motion";
 
 export const NavbarContainer = styled.div`
     width: 100%;
@@ -13,7 +12,7 @@ export const NavbarContainer = styled.div`
     background-color: transparent;
 `
 
-export const LeftContainer = styled(motion.span)`
+export const LeftContainer = styled.span`
     position: relative;
     float: left;
     top: 30%;
@@ -25,9 +24,11 @@ export const LeftContainer = styled(motion.span)`
         margin-left: 0;
         top: 0;
         padding-top: 16vh;
+        width: ${props => props.showNavbar ? 'calc(100px + 10vw)' : '0px'};
         background-color: ${colors.DARK_BLUE};
         height: 100vh;
         overflow: hidden;
+        transition: all 0.3s ease-in-out;
     }
 `
 
@@ -65,7 +66,7 @@ export const LogoContainer = styled.span`
     }
 `
 
-export const RightContainer = styled(motion.span)`
+export const RightContainer = styled.span`
     position: relative;
     float: right;
     top: 30%;
@@ -77,10 +78,12 @@ export const RightContainer = styled(motion.span)`
         margin-right: 0;
         top: 0;
         padding-top: 16vh;
+        width: ${props => props.showNavbar ? 'calc(100px + 10vw)' : '0px'};
         background-color: ${colors.DARK_BLUE};
         height: 100vh;
         overflow: hidden;
         text-align: right;
+        transition: all 0.3s ease;
     }
 `
 
