@@ -18,7 +18,7 @@ import  RightHamburger from '../images/right_hamburger.svg';
 import  LeftHamburger from '../images/left_hamburger.svg';
 import { useIsOutsideClick, useMediaQuery } from '../utils/hooks';
 import ContextConsumer from '../contexts/subOverlay';
-import { device, transitionEffects } from '../styles/constants';
+import { device } from '../styles/constants';
 
 const SubNavbar = ({ direction, data, set }) => {
     const [showNavbar, setShowNavbar] = React.useState(false);

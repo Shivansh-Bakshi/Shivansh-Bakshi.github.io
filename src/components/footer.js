@@ -2,7 +2,6 @@ import * as React from 'react';
 import { ExposeFooterIcon, ExposeFooterIconContainer, FooterContainer, MainFooter } from '../styles/footer';
 import UpIcon from '../images/up.svg';
 import DownIcon from '../images/down.svg';
-import { transitionEffects } from '../styles/constants';
 import { useIsOutsideClick } from '../utils/hooks';
 import ContextConsumer from '../contexts/subOverlay';
 
