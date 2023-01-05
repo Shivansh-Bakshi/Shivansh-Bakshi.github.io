@@ -37,3 +37,8 @@ export const transitionEffects = {
     duration: 0.3,
     ease: [0.87, 0, 0.13, 1]
 }
+
+export const device = {
+    mobile: 'max-width: 1280px',
+    bigScreen: 'min-width: 1600px',
+}

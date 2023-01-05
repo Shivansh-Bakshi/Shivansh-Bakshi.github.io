@@ -16,12 +16,29 @@ import {
 import LogoSVG from '../images/Logo.svg';
 import  RightHamburger from '../images/right_hamburger.svg';
 import  LeftHamburger from '../images/left_hamburger.svg';
-import { useIsOutsideClick } from '../utils/hooks';
+import { useIsOutsideClick, useMediaQuery } from '../utils/hooks';
 import ContextConsumer from '../contexts/subOverlay';
+import { device, transitionEffects } from '../styles/constants';
 
 const SubNavbar = ({ direction, data, set }) => {
     const [showNavbar, setShowNavbar] = React.useState(false);
     const wrapperRef = React.useRef(null);
+    const isMobile = useMediaQuery(device.mobile);
+
+    const subNavbar = {
+        initial: {
+            width: '0px'
+        },
+        animate: {
+            width: showNavbar ? 'calc(100px + 10vw)' : '0px'
+        },
+        transition: transitionEffects
+    }
+    const containerProps = isMobile ? {
+        initial: "initial",
+        animate: "animate",
+        variants: subNavbar
+    } : {}
 
     const handleOutsideClick = () => {
         if (showNavbar) {
@@ -39,7 +56,7 @@ const SubNavbar = ({ direction, data, set }) => {
     if (direction === 'left') {
         return (
             <>
-            <LeftContainer showNavbar={showNavbar}>
+            <LeftContainer {...containerProps}>
                 <UnorderedList>
                     <ListItem><PageLink to="/blog" activeClassName='active'>Blog</PageLink></ListItem>
                     <ListItem><PageLink to="/piano" activeClassName='active'>Piano</PageLink></ListItem>
@@ -54,7 +71,7 @@ const SubNavbar = ({ direction, data, set }) => {
 
     return (
         <>
-        <RightContainer showNavbar={showNavbar}>
+        <RightContainer {...containerProps}>
             <UnorderedList>
                 <ListItem><PageLink to="/" activeClassName='active'>Home</PageLink></ListItem>
                 <ListItem><PageLink to="/experience" activeClassName='active'>Experience</PageLink></ListItem>
@@ -92,7 +109,6 @@ const Navbar = () => {
                         </>
                     )}
                 </ContextConsumer>
-
                 <Logo />
             </NavbarContainer>
         </nav>

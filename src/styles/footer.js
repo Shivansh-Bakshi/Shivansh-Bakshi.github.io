@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from './constants';
+import { colors, device } from './constants';
 import { motion } from 'framer-motion';
 
 export const FooterContainer = styled.div`
@@ -19,7 +19,7 @@ export const MainFooter = styled(motion.div)`
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (${device.mobile}) {
         width: 100vw;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;

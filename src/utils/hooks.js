@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height} = window;
@@ -45,4 +45,28 @@ export const useEffectAfterFirstRender = (updateRef, callbackFn, dependencyList)
         }
         callbackFn();
     }, [updateRef, callbackFn, dependencyList])
+}
+
+export const useMediaQuery = (query) => {
+    const [targetReached, setTargetReached] = useState(false);
+
+    const updateTarget = useCallback((e) => {
+        if (e.matches) {
+            setTargetReached(true);
+        } else {
+            setTargetReached(false)  
+        }
+    }, [])
+
+    useEffect(() => {
+        const media = window.matchMedia('(' + query + ')')
+        media.addEventListener('change', updateTarget)
+
+        if (media.matches) {
+            setTargetReached(true)
+        }
+        return () => media.removeEventListener('change', updateTarget)
+    }, [query, updateTarget])
+
+    return targetReached
 }

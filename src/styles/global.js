@@ -1,5 +1,7 @@
+import React from 'react';
 import styled, { createGlobalStyle } from "styled-components";
-import { colors, transparency } from "./constants";
+import { colors, transitionEffects, transparency } from "./constants";
+import { motion } from "framer-motion";
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -11,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Container = styled.div`
     width: 100vw;
+    height: 100vh;
     position: fixed;
     background-color: ${colors.BLACK};
 `
@@ -22,21 +25,49 @@ export const Overlay = styled.div`
     position: absolute;
 `
 
-export const SubOverlay = styled.div`
+export const CanvasContainer = styled.div`
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%,0);
+    z-index: -1;
+`
+
+const SubOverlayComponent = styled(motion.div)`
+    position: absolute;
     height: 100vh;
     width: 100vw;
-    background-color: ${props => props.visible ? colors.BLACK + transparency[50] : 'transparent'};
+    background-color: ${colors.BLACK};
     transition: all 0.3s ease;
-    position: absolute;
 `
+
+export const SubOverlay = ({ visible }) => {
+    const subOverlay = {
+        initial: {
+            opacity: '0'
+        },
+        animate: {
+            opacity: visible ? '0.5' : '0'
+        },
+        transition: transitionEffects
+    }
+
+    return(
+        <SubOverlayComponent initial="initial" animate="animate" variants={subOverlay} />
+    )
+}
 
 export const BodyContainer = styled.div`
     position: absolute;
-    top: 16%;
-    left: 0;
-    min-height: 76vh;
-    min-width: 100vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 70vh;
+    min-width: 70vw;
+    max-height: 70vh;
+    max-width: 70vw;
     display: flex;
     align-items: center;
     flex-direction: column;
+    border: 3px solid white;
+    border-radius: 20px;
 `

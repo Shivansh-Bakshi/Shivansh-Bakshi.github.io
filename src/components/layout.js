@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container, GlobalStyle, Overlay, SubOverlay } from '../styles/global';
+import { CanvasContainer, Container, GlobalStyle, Overlay, SubOverlay } from '../styles/global';
 import Footer from './footer';
 import Navbar from './navbar';
 import ContextConsumer, { SubOverlayContextProvider } from '../contexts/subOverlay';
@@ -11,20 +11,20 @@ const Layout = ({ children }) => {
         <>
             <GlobalStyle />
             <SubOverlayContextProvider>
-            <Container>
-                <Overlay />
-                <ContextConsumer>
-                    {({ data }) => (<SubOverlay visible={data.visible} />)}
-                </ContextConsumer>
-                <React.Suspense fallback={<div>Loading...</div>}>
-                    <Background />
-                </React.Suspense>
-                    <Navbar />
-
+                <Container>
+                    <React.Suspense fallback={<div>Loading...</div>}>
+                        <CanvasContainer>
+                            <Background />
+                        </CanvasContainer>
+                    </React.Suspense>
+                    <Overlay />
                     {children}
-                    
+                    <ContextConsumer>
+                        {({ data }) => (<SubOverlay visible={data.visible} />)}
+                    </ContextConsumer>
+                    <Navbar />                
                     <Footer />
-            </Container>
+                </Container>
             </SubOverlayContextProvider>
         </>
     )

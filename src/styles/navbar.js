@@ -1,101 +1,107 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
 import fonts from "../fonts/fonts";
-import { colors, transparency } from "./constants";
+import { colors, transparency, device } from "./constants";
+import { motion } from "framer-motion";
 
 export const NavbarContainer = styled.div`
-    width: 100%;
-    height: 14%;
-    position: absolute;
+    position: fixed;
+    min-width: 100%;
+    min-height: 14%;
     top: 0;
     left: 0;
     background-color: transparent;
 `
 
-export const LeftContainer = styled.span`
-    position: relative;
-    float: left;
-    top: 30%;
+export const LeftContainer = styled(motion.span)`
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     margin-left: 60px;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (${device.mobile}) {
         position: fixed;
+        transform: unset;
         left: 0;
         margin-left: 0;
         top: 0;
         padding-top: 16vh;
-        width: ${props => props.showNavbar ? 'calc(100px + 10vw)' : '0px'};
+        /* width: ${props => props.showNavbar ? 'calc(100px + 10vw)' : '0px'}; */
         background-color: ${colors.DARK_BLUE};
         height: 100vh;
         overflow: hidden;
-        transition: all 0.3s ease;
+        /* transition: all 0.3s ease; */
     }
 `
 
 export const LeftMenu = styled.div`
     display: none;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (${device.mobile}) {
         display: block;
-        position: relative;
-        float: left;
-        top: 30%;
-        margin-left: 30px;
+        position: absolute;
+        left: 0;
+        margin-left: 60px;
+        top: 50%;
+        transform: translate(-50%, -50%);
         cursor: pointer;
     }
 `
 
 export const LogoContainer = styled.span`
-    position: relative;
-    float: right;
-    margin-right: 60px;
-    top: 20%;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translateY(-50%);
 
-    @media screen and (min-width: 1600px) {
+    @media screen and (${device.bigScreen}) {
         position: absolute;
         left: 50%;
-        top: 20%;
-        transform: translate(-50%, 0);
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (${device.mobile}) {
         position: absolute;
         left: 50%;
-        top: 30%;
-        transform: translate(-50%, 0);
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 `
 
-export const RightContainer = styled.span`
-    position: relative;
-    float: right;
-    top: 30%;
+export const RightContainer = styled(motion.span)`
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     margin-right: 60px;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (${device.mobile}) {
         position: fixed;
+        transform: unset;
         right: 0;
         margin-right: 0;
         top: 0;
         padding-top: 16vh;
-        width: ${props => props.showNavbar ? 'calc(100px + 10vw)' : '0px'};
+        /* width: ${props => props.showNavbar ? 'calc(100px + 10vw)' : '0px'}; */
         background-color: ${colors.DARK_BLUE};
         height: 100vh;
         overflow: hidden;
         text-align: right;
-        transition: all 0.3s ease;
+        /* transition: all 0.3s ease; */
     }
 `
 
 export const RightMenu = styled.div`
     display: none;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (${device.mobile}) {
         display: block;
-        position: relative;
-        float: right;
-        top: 30%;
+        position: absolute;
+        right: 0;
         margin-right: 30px;
+        top: 50%;
+        transform: translate(-50%, -50%);
         cursor: pointer;
     }
 `
@@ -105,13 +111,13 @@ export const UnorderedList = styled.ul`
     justify-content: space-between;
     list-style-type: none;
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (${device.mobile}) {
         flex-direction: column;
     }
 `
 
 export const ListItem = styled.li`
-    @media screen and (max-width: 1280px) {
+    @media screen and (${device.mobile}) {
         margin-right: unset;
         margin-top: 22px;
     }
@@ -147,7 +153,7 @@ export const PageLink = styled(Link)`
         text-decoration-thickness: 0.25rem;
     }
     
-    @media screen and (min-width: 1280px){
+    @media screen and (${device.mobile}){
         &:hover {
             background: ${colors.RED};
             border-radius: 10px;
@@ -169,7 +175,7 @@ const Image = styled.img`
     width: 100px;
     filter: invert(99%) sepia(95%) saturate(12%) hue-rotate(226deg) brightness(116%) contrast(87%);
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (${device.mobile}) {
         width: 50px;
     }
 `
@@ -178,7 +184,7 @@ export const HamburgerImage = styled(Image)`
     width: 50px;
     filter: invert(99%) sepia(95%) saturate(12%) hue-rotate(226deg) brightness(116%) contrast(87%);
 
-    @media screen and (max-width: 1280px) {
+    @media screen and (${device.mobile}) {
         width: 30px;
     }
 `
