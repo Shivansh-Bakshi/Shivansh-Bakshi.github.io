@@ -19,7 +19,15 @@ export const Overlay = styled.div`
     height: 100vh;
     width: 100vw;
     background-image: linear-gradient(${colors.BLACK + transparency[95]}, ${colors.DARK_BLUE + transparency[85]});
-    position: absolute ;
+    position: absolute;
+`
+
+export const SubOverlay = styled.div`
+    height: 100vh;
+    width: 100vw;
+    background-color: ${props => props.visible ? colors.BLACK + transparency[50] : 'transparent'};
+    transition: all 0.3s ease;
+    position: absolute;
 `
 
 export const BodyContainer = styled.div`

@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Container, GlobalStyle, Overlay } from '../styles/global';
+import { Container, GlobalStyle, Overlay, SubOverlay } from '../styles/global';
 import Footer from './footer';
 import Navbar from './navbar';
+import ContextConsumer, { SubOverlayContextProvider } from '../contexts/subOverlay';
 
 const Background = React.lazy(() => import('./background'));
 
@@ -9,17 +10,22 @@ const Layout = ({ children }) => {
     return(
         <>
             <GlobalStyle />
+            <SubOverlayContextProvider>
             <Container>
                 <Overlay />
+                <ContextConsumer>
+                    {({ data }) => (<SubOverlay visible={data.visible} />)}
+                </ContextConsumer>
                 <React.Suspense fallback={<div>Loading...</div>}>
                     <Background />
                 </React.Suspense>
-                <Navbar />
+                    <Navbar />
 
-                {children}
-
-                <Footer />
+                    {children}
+                    
+                    <Footer />
             </Container>
+            </SubOverlayContextProvider>
         </>
     )
 }

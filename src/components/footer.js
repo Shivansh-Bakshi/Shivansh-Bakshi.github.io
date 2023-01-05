@@ -4,14 +4,16 @@ import UpIcon from '../images/up.svg';
 import DownIcon from '../images/down.svg';
 import { transitionEffects } from '../styles/constants';
 import { useIsOutsideClick } from '../utils/hooks';
+import ContextConsumer from '../contexts/subOverlay';
 
-const Footer = () => {
+const FooterComponent = ({ data, set }) => {
     const [showFooter, setShowFooter] = React.useState(false);
     const wrapperRef = React.useRef(null);
 
     const handleOutsideClick = () => {
         if (showFooter) {
             setShowFooter(false);
+            set({visible: false});
         }
     }
 
@@ -19,6 +21,7 @@ const Footer = () => {
 
     const handleShowFooter = () => {
         setShowFooter(!showFooter);
+        set({visible: !data.visible});
     }
 
     const footer = {
@@ -32,6 +35,7 @@ const Footer = () => {
     }
 
     return(
+        <>
         <FooterContainer>
             <ExposeFooterIconContainer onClick={handleShowFooter} ref={wrapperRef}>
                 <ExposeFooterIcon src={showFooter ? DownIcon : UpIcon} alt='Arrow' />
@@ -40,6 +44,17 @@ const Footer = () => {
 
             </MainFooter>
         </FooterContainer>
+        </>
+    )
+}
+
+const Footer = () => {
+    return(
+        <ContextConsumer>
+            {({ data, set }) => (
+                <FooterComponent data={data} set={set} />
+            )}
+        </ContextConsumer>
     )
 }
 

@@ -28,7 +28,7 @@ export const LeftContainer = styled.span`
         background-color: ${colors.DARK_BLUE};
         height: 100vh;
         overflow: hidden;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease;
     }
 `
 
