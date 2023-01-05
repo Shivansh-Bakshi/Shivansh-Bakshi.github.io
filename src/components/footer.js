@@ -31,7 +31,6 @@ const FooterComponent = ({ data, set }) => {
         animate: {
             height: showFooter ? '10vh' : '0'
         },
-        transition: transitionEffects
     }
 
     return(

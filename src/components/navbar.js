@@ -31,8 +31,7 @@ const SubNavbar = ({ direction, data, set }) => {
         },
         animate: {
             width: showNavbar ? 'calc(100px + 10vw)' : '0px'
-        },
-        transition: transitionEffects
+        }
     }
     const containerProps = isMobile ? {
         initial: "initial",
