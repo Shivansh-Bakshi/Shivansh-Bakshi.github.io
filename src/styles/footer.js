@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { colors, device } from './constants';
 import { motion } from 'framer-motion';
+import fonts from "../fonts/fonts";
 
 export const FooterContainer = styled.div`
     width: 100vw;
@@ -19,7 +20,7 @@ export const MainFooter = styled(motion.div)`
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
 
-    @media screen and (${device.mobile}) {
+    @media screen and (${device.MEDIUM_SCREEN}) {
         width: 100vw;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
@@ -41,4 +42,39 @@ export const ExposeFooterIconContainer = styled(motion.div)`
 
 export const ExposeFooterIcon = styled.img`
     width: 30px;
+`
+
+export const SocialsContainer = styled.div`
+    display: flex;
+    justify-content: center;
+`
+
+export const TextWithImage = styled.div`
+    display: flex;
+    justify-content: center;
+`
+
+export const FooterImage = styled.img`
+    width: 15px;
+    height: 15px;
+    transform: translateY(3px);
+
+    @media screen and (${device.MEDIUM_SCREEN}) {
+        transform: unset;
+    }
+`
+
+export const FooterText = styled.p`
+    ${fonts}
+
+    font-family: 'Source Code Pro', sans-serif;
+    font-size: 17px;
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+
+    @media screen and (${device.MEDIUM_SCREEN}) {
+        font-size: 11px;
+    }
 `
