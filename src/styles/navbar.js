@@ -19,7 +19,7 @@ export const LeftContainer = styled(motion.span)`
     transform: translateY(-50%);
     margin-left: 60px;
 
-    @media screen and (${device.mobile}) {
+    @media screen and (${device.MEDIUM_SCREEN}) {
         position: fixed;
         transform: unset;
         left: 0;
@@ -37,7 +37,7 @@ export const LeftContainer = styled(motion.span)`
 export const LeftMenu = styled.div`
     display: none;
 
-    @media screen and (${device.mobile}) {
+    @media screen and (${device.MEDIUM_SCREEN}) {
         display: block;
         position: absolute;
         left: 0;
@@ -54,14 +54,14 @@ export const LogoContainer = styled.span`
     left: 30%;
     transform: translateY(-50%);
 
-    @media screen and (${device.bigScreen}) {
+    @media screen and (${device.BIG_SCREEN}) {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
     }
 
-    @media screen and (${device.mobile}) {
+    @media screen and (${device.MEDIUM_SCREEN}) {
         position: absolute;
         left: 50%;
         top: 50%;
@@ -76,7 +76,7 @@ export const RightContainer = styled(motion.span)`
     transform: translateY(-50%);
     margin-right: 60px;
 
-    @media screen and (${device.mobile}) {
+    @media screen and (${device.MEDIUM_SCREEN}) {
         position: fixed;
         transform: unset;
         right: 0;
@@ -95,7 +95,7 @@ export const RightContainer = styled(motion.span)`
 export const RightMenu = styled.div`
     display: none;
 
-    @media screen and (${device.mobile}) {
+    @media screen and (${device.MEDIUM_SCREEN}) {
         display: block;
         position: absolute;
         right: 0;
@@ -111,13 +111,13 @@ export const UnorderedList = styled.ul`
     justify-content: space-between;
     list-style-type: none;
 
-    @media screen and (${device.mobile}) {
+    @media screen and (${device.MEDIUM_SCREEN}) {
         flex-direction: column;
     }
 `
 
 export const ListItem = styled.li`
-    @media screen and (${device.mobile}) {
+    @media screen and (${device.MEDIUM_SCREEN}) {
         margin-right: unset;
         margin-top: 22px;
     }
@@ -153,7 +153,7 @@ export const PageLink = styled(Link)`
         text-decoration-thickness: 0.25rem;
     }
     
-    @media screen and (${device.mobile}){
+    @media screen and (${device.MEDIUM_SCREEN}){
         &:hover {
             background: ${colors.RED};
             border-radius: 10px;
@@ -166,16 +166,11 @@ export const PageLink = styled(Link)`
     }
 `
 
-export const ResumeLink = styled(PageLink).attrs({
-    as: "a"
-})`
-`
-
 const Image = styled.img`
     width: 100px;
     filter: invert(99%) sepia(95%) saturate(12%) hue-rotate(226deg) brightness(116%) contrast(87%);
 
-    @media screen and (${device.mobile}) {
+    @media screen and (${device.MEDIUM_SCREEN}) {
         width: 50px;
     }
 `
@@ -184,7 +179,7 @@ export const HamburgerImage = styled(Image)`
     width: 50px;
     filter: invert(99%) sepia(95%) saturate(12%) hue-rotate(226deg) brightness(116%) contrast(87%);
 
-    @media screen and (${device.mobile}) {
+    @media screen and (${device.MEDIUM_SCREEN}) {
         width: 30px;
     }
 `

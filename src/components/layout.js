@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
             <GlobalStyle />
             <SubOverlayContextProvider>
                 <Container>
-                <InitialTransition />
+                    <InitialTransition />
                     <React.Suspense fallback={<div>Loading...</div>}>
                         <CanvasContainer>
                             <Background />

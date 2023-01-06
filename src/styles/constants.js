@@ -3,10 +3,11 @@ export const colors = {
     LIGHT_OFF_WHITE: "#eeeeee",
     DARK_OFF_WHITE: '#cccccc',
     RED: "#f87060",
+    LIGHT_BLUE: "#5998c5",
     DARK_BLUE: "#1c3144",
     BLACK: "#000000",
-    TEA_GREEN: "#CFFFB0",
-    YELLOW: "#FFF689",
+    TEA_GREEN: "#cfffb0",
+    YELLOW: "#fff689",
 }
 
 export const transparency = {
@@ -39,6 +40,7 @@ export const transitionEffects = {
 }
 
 export const device = {
-    mobile: 'max-width: 1280px',
-    bigScreen: 'min-width: 1600px',
+    MEDIUM_SCREEN: 'max-width: 1280px',
+    TABLET: 'max-width: 768px',
+    BIG_SCREEN: 'min-width: 1600px',
 }

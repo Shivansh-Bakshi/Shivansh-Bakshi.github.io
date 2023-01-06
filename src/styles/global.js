@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle } from "styled-components";
-import { colors, transitionEffects, transparency } from "./constants";
+import { colors, device, transparency } from "./constants";
 import { motion } from "framer-motion";
 
 export const GlobalStyle = createGlobalStyle`
@@ -34,21 +34,20 @@ export const CanvasContainer = styled.div`
 
 const SubOverlayComponent = styled(motion.div)`
     position: absolute;
-    height: 100vh;
+    opacity: 0.5;
+    top: 0;
     width: 100vw;
     background-color: ${colors.BLACK};
-    transition: all 0.3s ease;
 `
 
 export const SubOverlay = ({ visible }) => {
     const subOverlay = {
         initial: {
-            opacity: '0'
+            height: '0'
         },
         animate: {
-            opacity: visible ? '0.5' : '0'
+            height: visible ? '100vh' : 0
         },
-        transition: transitionEffects
     }
 
     return(
@@ -56,18 +55,35 @@ export const SubOverlay = ({ visible }) => {
     )
 }
 
-export const BodyContainer = styled.div`
+const BodyContainer = styled.div`
     position: absolute;
-    top: 50%;
+    bottom: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
-    min-height: 70vh;
-    min-width: 70vw;
-    max-height: 70vh;
-    max-width: 70vw;
-    display: flex;
+    transform: translate(-50%, 0);
+    min-height: 85vh;
+    max-height: 85vh;
+    min-width: 90vw;
+    max-width: 100vw;
+    display: grid;
     align-items: center;
-    flex-direction: column;
-    border: 3px solid white;
-    border-radius: 20px;
+
+    @media screen and (${device.MEDIUM_SCREEN}) {
+        align-items: flex-start;
+    }
+    /* border: 3px solid white; */
+`
+
+export const BodyContainerNCol = styled(BodyContainer)`
+    grid-template-columns: ${props => "1fr ".repeat(props.n).trim()};
+    /* border: 3px solid white; */
+`
+
+export const RowNContainer = styled.div`
+    grid-row: ${props => props.n};
+    /* border: 3px solid white; */
+`
+
+export const ColNContainer = styled.div`
+    grid-column: ${props => props.n};
+    /* border: 3px solid white; */
 `

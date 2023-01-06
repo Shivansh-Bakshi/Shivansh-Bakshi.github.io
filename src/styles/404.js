@@ -12,8 +12,9 @@ export const Error = styled.h1`
     font-size: 80px;
     text-align: center;
     color: ${colors.DARK_OFF_WHITE};
+    grid-row: 1;
 
-    @media screen and (${device.mobile}) {
+    @media screen and (${device.MEDIUM_SCREEN}) {
         font-size: 40px;
     }
 `
@@ -28,8 +29,9 @@ export const Message = styled.p`
     font-size: 40px;
     text-align: center;
     color: ${colors.DARK_OFF_WHITE};
+    grid-row: 2;
 
-    @media screen and (${device.mobile}) {
+    @media screen and (${device.MEDIUM_SCREEN}) {
         font-size: 20px;
     }    
 `

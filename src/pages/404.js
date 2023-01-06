@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { BodyContainer } from '../styles/global';
+import { BodyContainerNCol } from '../styles/global';
 import { Error, Message } from '../styles/404';
 
 const NotFoundPage = () => {
     return (
-        <BodyContainer>
+        <BodyContainerNCol n={1}>
             <Error>This Page Does Not Exist</Error>
             <Message>Try navigating to another page.</Message>
-        </BodyContainer>
+        </BodyContainerNCol>
     )
 }
 
