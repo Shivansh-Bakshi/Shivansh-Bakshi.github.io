@@ -2,10 +2,10 @@ import * as React from 'react';
 import { CanvasContainer, Container, GlobalStyle, Overlay, SubOverlay } from '../styles/global';
 import ContextConsumer, { SubOverlayContextProvider } from '../contexts/subOverlay';
 import InitialTransition from './initialTransition';
+import Navbar from './navbar';
+import Footer from './footer';
 
 const Background = React.lazy(() => import('./background'));
-const Navbar = React.lazy(() => import('./navbar'));
-const Footer = React.lazy(() => import('./footer'))
 
 const Layout = ({ children }) => {
     return(
@@ -26,10 +26,8 @@ const Layout = ({ children }) => {
                     <ContextConsumer>
                         {({ data }) => (<SubOverlay visible={data.visible} />)}
                     </ContextConsumer>
-                    <React.Suspense fallback={<div>Loading...</div>}>
-                        <Navbar />                
-                        <Footer />
-                    </React.Suspense>
+                    <Navbar />                
+                    <Footer />
                 </Container>
             </SubOverlayContextProvider>
         </>

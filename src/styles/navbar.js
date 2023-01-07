@@ -26,11 +26,10 @@ export const LeftContainer = styled(motion.span)`
         margin-left: 0;
         top: 0;
         padding-top: 16vh;
-        /* width: ${props => props.showNavbar ? 'calc(100px + 10vw)' : '0px'}; */
+        width: 0;
         background-color: ${colors.DARK_BLUE};
         height: 100vh;
         overflow: hidden;
-        /* transition: all 0.3s ease; */
     }
 `
 
@@ -83,12 +82,11 @@ export const RightContainer = styled(motion.span)`
         margin-right: 0;
         top: 0;
         padding-top: 16vh;
-        /* width: ${props => props.showNavbar ? 'calc(100px + 10vw)' : '0px'}; */
+        width: 0;
         background-color: ${colors.DARK_BLUE};
         height: 100vh;
         overflow: hidden;
         text-align: right;
-        /* transition: all 0.3s ease; */
     }
 `
 

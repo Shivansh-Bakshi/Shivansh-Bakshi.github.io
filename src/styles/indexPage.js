@@ -69,6 +69,11 @@ export const ButtonContainer = styled.div`
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
+
+    @media screen and (${device.MEDIUM_SCREEN}) {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 `
 
 export const ResumeLink = styled.a`
@@ -76,4 +81,8 @@ export const ResumeLink = styled.a`
     font-size: 25px;
     color: ${colors.LIGHT_OFF_WHITE};
     text-decoration: none;
+
+    @media screen and (${device.MEDIUM_SCREEN}) {
+        font-size: 23px;
+    }
 `

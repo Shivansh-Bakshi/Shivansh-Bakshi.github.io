@@ -9,6 +9,8 @@ export const InitialTransitionContainer = styled.div`
 `
 
 export const Transition = styled(motion.div)`
+    top: 0;
+    height: 100vh;
     position: relative;
     width: 100%;
     background-color: ${colors.BLACK};

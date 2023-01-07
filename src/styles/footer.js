@@ -15,6 +15,7 @@ export const MainFooter = styled(motion.div)`
     position: relative;
     width: 40vw;
     left: 50%;
+    height: 0;
     transform: translate(-50%, 0);
     background-color: ${colors.TEA_GREEN};
     border-top-left-radius: 25px;
