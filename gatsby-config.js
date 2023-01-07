@@ -4,12 +4,12 @@ module.exports = {
     siteUrl: `https://www.shivanshbakshi.dev`
   },
   plugins: [
-    {
-      resolve: "gatsby-plugin-layout",
-      options: {
-        component: require.resolve('./src/components/layout')
-      }
-    },
+    // {
+    //   resolve: "gatsby-plugin-layout",
+    //   options: {
+    //     component: require.resolve('./src/components/layout')
+    //   }
+    // },
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {

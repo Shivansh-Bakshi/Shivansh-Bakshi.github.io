@@ -4,10 +4,18 @@ import ContextConsumer, { SubOverlayContextProvider } from '../contexts/subOverl
 import InitialTransition from './initialTransition';
 import Navbar from './navbar';
 import Footer from './footer';
+import PageTransition from './PageTransition';
 
 const Background = React.lazy(() => import('./background'));
 
-const Layout = ({ children }) => {
+const Layout = props => {
+    React.useEffect(() => {
+        console.log("mount");
+        return(() => {
+            console.log("unmount");
+        })
+      }, [])
+
     return(
         <>
             <GlobalStyle />
@@ -17,18 +25,19 @@ const Layout = ({ children }) => {
                 <ContextConsumer>
                     {({ data }) => (<SubOverlay visible={data.visible} />)}
                 </ContextConsumer>
-
-                <React.Suspense fallback={<div>Loading...</div>}>
+                <React.Suspense>
                     <CanvasContainer>
                         <Background />
                     </CanvasContainer>
                 </React.Suspense>
                 <Overlay />
 
-                <Container>
-                    {children}
+                <Container key={"container-" + props.location.pathname }>
+                    <PageTransition {...props}>
+                        {props.children}
+                        </PageTransition>
                 </Container>
-                
+                                
                 <Footer />
             </SubOverlayContextProvider>
         </>

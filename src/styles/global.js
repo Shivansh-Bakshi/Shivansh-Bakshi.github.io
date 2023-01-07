@@ -31,8 +31,6 @@ export const Overlay = styled.div`
 
 export const CanvasContainer = styled.div`
     position: absolute;
-    left: 50%;
-    transform: translate(-50%,0);
     z-index: -1;
 `
 
