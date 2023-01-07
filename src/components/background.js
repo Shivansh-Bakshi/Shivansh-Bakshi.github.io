@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Sketch from 'react-p5';
-import { useWindowDimensions } from '../utils/hooks';
+import { useEffectAfterFirstRender, useWindowDimensions } from '../utils/hooks';
 
 var cols, rows;
 const scl = 60;
@@ -11,11 +11,14 @@ var flying = 0;
 const speed = 0.05;
 
 var terrain = [];
+var P5;
 
 const Background = () => {
     const { height, width } = useWindowDimensions();
+    const isFirstRender = useRef(true);
 
     const setup = (p5, canvasParentRef) => {
+        P5 = p5;
         p5.createCanvas(width, height, p5.WEBGL).parent(canvasParentRef);
         cols = 2 * width / scl;
         rows = 1.5 * height / scl;
@@ -27,6 +30,10 @@ const Background = () => {
             }
         }
     }
+
+    useEffectAfterFirstRender(isFirstRender, () => {
+        P5.resizeCanvas(width, height);
+    }, [height, width]);
 
     const draw = p5 => {
         p5.background(0);
