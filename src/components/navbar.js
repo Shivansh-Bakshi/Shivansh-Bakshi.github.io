@@ -75,7 +75,6 @@ const SubNavbar = ({ direction, data, set }) => {
                 <ListItem><PageLink to="/experience" activeClassName='active'>Experience</PageLink></ListItem>
                 <ListItem><PageLink to="/projects" activeClassName='active'>Projects</PageLink></ListItem>
                 <ListItem><PageLink to="/certificates" activeClassName='active'>Certificates</PageLink></ListItem>
-                {/* <ListItem><ResumeLink href='/Resume.pdf'>Resume</ResumeLink></ListItem> */}
                 <ListItem><PageLink to="/contact" activeClassName='active'>Contact</PageLink></ListItem>
             </UnorderedList>
         </RightContainer>
