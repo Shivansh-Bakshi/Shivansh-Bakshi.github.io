@@ -1,12 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 
 const PageTransition = ({ children, location }) => {
     const duration = 0.35;
-
-    useEffect(() => {
-        console.log(location);
-    }, [])
 
     const variants = {
         initial: {
