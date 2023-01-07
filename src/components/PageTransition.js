@@ -2,14 +2,16 @@ import React from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 
 const PageTransition = ({ animationKey, children }) => {
-    const duration = 0.35;
+    const duration = 0.2;
 
     const variants = {
         initial: {
           opacity: 0,
+          transform: 'translateX(-10px)'
         },
         enter: {
           opacity: 1,
+          transform: 'translateX(10px)',
           transition: {
             duration: duration,
             delay: duration,
@@ -26,7 +28,7 @@ const PageTransition = ({ animationKey, children }) => {
     }
 
     return(
-        <AnimatePresence>
+        <AnimatePresence mode='wait'>
             <motion.div
                 key={animationKey}
                 variants={variants}

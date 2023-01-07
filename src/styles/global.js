@@ -58,7 +58,7 @@ export const SubOverlay = ({ visible }) => {
     )
 }
 
-const BodyContainer = styled.div`
+const BodyContainer = styled(motion.div)`
     position: absolute;
     bottom: 0;
     left: 50%;
