@@ -9,6 +9,7 @@ export const FooterContainer = styled.div`
     bottom: 0;
     display: flex;
     flex-direction: column;
+    z-index: 50;
 `
 
 export const MainFooter = styled(motion.div)`

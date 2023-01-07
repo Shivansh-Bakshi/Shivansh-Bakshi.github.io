@@ -11,6 +11,7 @@ export const NavbarContainer = styled.div`
     top: 0;
     left: 0;
     background-color: transparent;
+    z-index: 50;
 `
 
 export const LeftContainer = styled(motion.span)`

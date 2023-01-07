@@ -8,6 +8,10 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
+    body {
+        overflow: hidden;    
+    }
 }
 `
 
@@ -15,7 +19,7 @@ export const Container = styled.div`
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background-color: ${colors.BLACK};
+    background-color: transparent;
 `
 
 export const Overlay = styled.div`
@@ -38,6 +42,7 @@ const SubOverlayComponent = styled(motion.div)`
     top: 0;
     width: 100vw;
     background-color: ${colors.BLACK};
+    z-index: 30;
 `
 
 export const SubOverlay = ({ visible }) => {

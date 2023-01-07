@@ -12,23 +12,24 @@ const Layout = ({ children }) => {
         <>
             <GlobalStyle />
             <SubOverlayContextProvider>
-                <Container>
-                    <InitialTransition />
-                    <React.Suspense fallback={<div>Loading...</div>}>
-                        <CanvasContainer>
-                            <Background />
-                        </CanvasContainer>
-                    </React.Suspense>
-                    <Overlay />
+                <InitialTransition />
+                <Navbar />
+                <ContextConsumer>
+                    {({ data }) => (<SubOverlay visible={data.visible} />)}
+                </ContextConsumer>
 
+                <React.Suspense fallback={<div>Loading...</div>}>
+                    <CanvasContainer>
+                        <Background />
+                    </CanvasContainer>
+                </React.Suspense>
+                <Overlay />
+
+                <Container>
                     {children}
-                    
-                    <ContextConsumer>
-                        {({ data }) => (<SubOverlay visible={data.visible} />)}
-                    </ContextConsumer>
-                    <Navbar />                
-                    <Footer />
                 </Container>
+                
+                <Footer />
             </SubOverlayContextProvider>
         </>
     )

@@ -14,5 +14,5 @@ export const Transition = styled(motion.div)`
     position: relative;
     width: 100%;
     background-color: ${colors.BLACK};
-    z-index: 50;
+    z-index: 100;
 `
