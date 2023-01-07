@@ -9,13 +9,6 @@ import PageTransition from './PageTransition';
 const Background = React.lazy(() => import('./background'));
 
 const Layout = props => {
-    React.useEffect(() => {
-        console.log("mount");
-        return(() => {
-            console.log("unmount");
-        })
-      }, [])
-
     return(
         <>
             <GlobalStyle />
@@ -32,11 +25,11 @@ const Layout = props => {
                 </React.Suspense>
                 <Overlay />
 
-                <Container key={"container-" + props.location.pathname }>
-                    <PageTransition {...props}>
-                        {props.children}
-                        </PageTransition>
-                </Container>
+                <PageTransition animationKey={props.location.pathname}>
+                    <Container>
+                            {props.children}
+                    </Container>
+                </PageTransition>
                                 
                 <Footer />
             </SubOverlayContextProvider>
