@@ -5,8 +5,19 @@ import InitialTransition from './initialTransition';
 import Navbar from './navbar';
 import Footer from './footer';
 import PageTransition from './PageTransition';
+import { transitionEffects } from '../styles/constants';
 
 const Background = React.lazy(() => import('./background'));
+
+const backgroundVariants = {
+    initial: {
+        height: '0vh'
+    },
+    animate: {
+        height: '100vh',
+        transition: transitionEffects
+    }
+}
 
 const Layout = props => {
     return(
@@ -20,7 +31,10 @@ const Layout = props => {
                 
                 <Navbar />
                 <React.Suspense>
-                    <CanvasContainer>
+                    <CanvasContainer
+                    initial="initial"
+                    animate="animate"
+                    variants={backgroundVariants}>
                         <Background />
                     </CanvasContainer>
                 </React.Suspense>
