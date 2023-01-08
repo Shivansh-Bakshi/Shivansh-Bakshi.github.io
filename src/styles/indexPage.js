@@ -2,6 +2,29 @@ import styled from "styled-components";
 import { colors } from "./constants";
 import fonts from "../fonts/fonts";
 import { MAX_WIDTH } from "./device";
+import ProgressiveImage from "../components/ProgressiveImage";
+
+export const ProgressivePortrait = styled(ProgressiveImage)`
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60vw;
+
+    @media screen and (${MAX_WIDTH.LAPTOP}) {
+        width: unset;
+        height: 60vh;
+        right: -20%;
+    }
+
+    @media screen and (${MAX_WIDTH.TABLET}) {
+        height: 50vh;
+        right: unset;
+    }
+
+    @media screen and (${MAX_WIDTH.MOBILES}) {
+        height: 40vh;
+    }
+`
 
 export const Portrait = styled.img`
     position: absolute;

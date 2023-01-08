@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ButtonContainer, Emphasis, Portrait, ProgressivePortrait, ResumeLink, TextContainer } from '../styles/indexPage.js';
+import { ButtonContainer, Emphasis, ProgressivePortrait, ResumeLink, TextContainer } from '../styles/indexPage.js';
 import { BodyContainerNCol, ColumnContainer, RowContainer } from '../styles/global';
 import { useMediaQuery } from '../utils/hooks';
 
