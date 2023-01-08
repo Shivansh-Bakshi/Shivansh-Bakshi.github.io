@@ -14,10 +14,11 @@ const Layout = props => {
             <GlobalStyle />
             <SubOverlayContextProvider>
                 <InitialTransition />
-                <Navbar />
                 <ContextConsumer>
-                    {({ data }) => (<SubOverlay visible={data.visible} />)}
+                    {({ data }) => (<SubOverlay {...data}/>)}
                 </ContextConsumer>
+                
+                <Navbar />
                 <React.Suspense>
                     <CanvasContainer>
                         <Background />

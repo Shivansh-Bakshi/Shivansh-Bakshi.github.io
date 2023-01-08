@@ -36,20 +36,26 @@ export const CanvasContainer = styled.div`
 
 const SubOverlayComponent = styled(motion.div)`
     position: absolute;
-    opacity: 0.5;
+    opacity: 0.3;
     top: 0;
     width: 100vw;
+    height: 100vh;
     background-color: ${colors.BLACK};
-    z-index: 30;
+    z-index: -50;
 `
 
 export const SubOverlay = ({ visible }) => {
     const subOverlay = {
         initial: {
-            height: '0'
+            opacity: 0.3,
+            zIndex: -50
         },
         animate: {
-            height: visible ? '100vh' : 0
+            opacity: visible ? 0.5 : 0.3,
+            zIndex: visible ? 30 : -50,
+            transition: {
+                duration: 0.2
+            }
         },
     }
 
