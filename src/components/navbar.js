@@ -17,12 +17,12 @@ import  RightHamburger from '../images/right_hamburger.svg';
 import  LeftHamburger from '../images/left_hamburger.svg';
 import { useIsOutsideClick, useMediaQuery } from '../utils/hooks';
 import ContextConsumer from '../contexts/subOverlay';
-import { device } from '../styles/constants';
+import { MAX_WIDTH } from '../styles/device';
 
 const SubNavbar = ({ direction, data, set }) => {
     const [showNavbar, setShowNavbar] = React.useState(false);
     const wrapperRef = React.useRef(null);
-    const isMobile = useMediaQuery(device.MEDIUM_SCREEN);
+    const isLaptop = useMediaQuery(MAX_WIDTH.LAPTOP);
 
     const subNavbar = {
         initial: {
@@ -32,7 +32,7 @@ const SubNavbar = ({ direction, data, set }) => {
             width: showNavbar ? 'calc(100px + 10vw)' : '0px'
         }
     }
-    const containerProps = isMobile ? {
+    const containerProps = isLaptop ? {
         initial: "initial",
         animate: "animate",
         variants: subNavbar

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { colors, device } from './constants';
+import { colors } from './constants';
 import { motion } from 'framer-motion';
 import fonts from "../fonts/fonts";
+import { MAX_WIDTH } from './device';
 
 export const FooterContainer = styled.div`
     width: 100vw;
@@ -22,7 +23,13 @@ export const MainFooter = styled(motion.div)`
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.LAPTOP}) {
+        width: 50vw;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    @media screen and (${MAX_WIDTH.TABLET}) {
         width: 100vw;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
@@ -49,6 +56,7 @@ export const ExposeFooterIcon = styled.img`
 export const SocialsContainer = styled.div`
     display: flex;
     justify-content: center;
+    opacity: 0.7;
 `
 
 export const TextWithImage = styled.div`
@@ -61,7 +69,7 @@ export const FooterImage = styled.img`
     height: 15px;
     transform: translateY(3px);
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.TABLET}) {
         transform: unset;
     }
 `
@@ -72,11 +80,16 @@ export const FooterText = styled.p`
     font-family: 'Source Code Pro', sans-serif;
     font-size: 17px;
     text-align: left;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-top: 3px;
+    margin-bottom: 3px;
     text-align: center;
+    opacity: 0.7;
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.TABLET}) {
         font-size: 11px;
+    }
+
+    @media screen and (${MAX_WIDTH.LAPTOP}) {
+        font-size: 15px;
     }
 `

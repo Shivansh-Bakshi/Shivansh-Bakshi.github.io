@@ -30,6 +30,9 @@ const PageTransition = ({ animationKey, children }) => {
     return(
         <AnimatePresence mode='wait'>
             <motion.div
+				style={{
+					position: 'fixed'
+				}}
                 key={animationKey}
                 variants={variants}
                 initial="initial"

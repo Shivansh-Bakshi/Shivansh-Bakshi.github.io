@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import fonts from "../fonts/fonts";
-import { colors, device } from "./constants";
+import { colors } from "./constants";
+import { MAX_WIDTH } from "./device";
 
 export const Error = styled.h1`
     ${fonts}
@@ -14,7 +15,7 @@ export const Error = styled.h1`
     color: ${colors.DARK_OFF_WHITE};
     grid-row: 1;
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.TABLET}) {
         font-size: 40px;
     }
 `
@@ -31,7 +32,7 @@ export const Message = styled.p`
     color: ${colors.DARK_OFF_WHITE};
     grid-row: 2;
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.TABLET}) {
         font-size: 20px;
     }    
 `

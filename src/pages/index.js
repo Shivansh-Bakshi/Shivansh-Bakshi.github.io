@@ -4,7 +4,7 @@ import { BodyContainerNCol, ColNContainer, RowNContainer } from '../styles/globa
 import { useMediaQuery } from '../utils/hooks';
 
 import PortraitImage from '../images/portrait.png';
-import { device } from '../styles/constants.js';
+import { MAX_WIDTH } from '../styles/device.js';
 
 const INTROL1 = 'Hey There!';
 const INTROL2 = "I'm ";
@@ -14,9 +14,9 @@ const DESCRIPTION = 'A passionate developer with a knack for learning new techno
 const DOWNLOAD_CV = 'Download CV';
 
 const IndexPage = () => {
-    const isMobile = useMediaQuery(device.MEDIUM_SCREEN)
+    const isTablet = useMediaQuery(MAX_WIDTH.TABLET)
 
-    if (isMobile) {
+    if (isTablet) {
         return(
             <BodyContainerNCol n={1}>
                 <RowNContainer n={1}>

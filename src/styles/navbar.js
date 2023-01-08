@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
 import fonts from "../fonts/fonts";
-import { colors, transparency, device } from "./constants";
+import { colors, transparency } from "./constants";
 import { motion } from "framer-motion";
+import { MAX_WIDTH, MIN_WIDTH } from "./device";
 
 export const NavbarContainer = styled.div`
     position: fixed;
@@ -20,7 +21,7 @@ export const LeftContainer = styled(motion.span)`
     transform: translateY(-50%);
     margin-left: 60px;
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.LAPTOP}) {
         position: fixed;
         transform: unset;
         left: 0;
@@ -37,7 +38,7 @@ export const LeftContainer = styled(motion.span)`
 export const LeftMenu = styled.div`
     display: none;
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.LAPTOP}) {
         display: block;
         position: absolute;
         left: 0;
@@ -54,14 +55,14 @@ export const LogoContainer = styled.span`
     left: 30%;
     transform: translateY(-50%);
 
-    @media screen and (${device.BIG_SCREEN}) {
+    @media screen and (${MIN_WIDTH.LAPTOPL}) {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
     }
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.LAPTOP}) {
         position: absolute;
         left: 50%;
         top: 50%;
@@ -76,7 +77,7 @@ export const RightContainer = styled(motion.span)`
     transform: translateY(-50%);
     margin-right: 60px;
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.LAPTOP}) {
         position: fixed;
         transform: unset;
         right: 0;
@@ -94,7 +95,7 @@ export const RightContainer = styled(motion.span)`
 export const RightMenu = styled.div`
     display: none;
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.LAPTOP}) {
         display: block;
         position: absolute;
         right: 0;
@@ -110,13 +111,13 @@ export const UnorderedList = styled.ul`
     justify-content: space-between;
     list-style-type: none;
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.LAPTOP}) {
         flex-direction: column;
     }
 `
 
 export const ListItem = styled.li`
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.LAPTOP}) {
         margin-right: unset;
         margin-top: 22px;
     }
@@ -152,7 +153,7 @@ export const PageLink = styled(Link)`
         text-decoration-thickness: 0.25rem;
     }
     
-    @media screen and (${device.MEDIUM_SCREEN}){
+    @media screen and (${MAX_WIDTH.LAPTOP}){
         &:hover {
             background: ${colors.RED};
             border-radius: 10px;
@@ -169,7 +170,7 @@ const Image = styled.img`
     width: 100px;
     filter: invert(99%) sepia(95%) saturate(12%) hue-rotate(226deg) brightness(116%) contrast(87%);
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.LAPTOP}) {
         width: 50px;
     }
 `
@@ -178,7 +179,7 @@ export const HamburgerImage = styled(Image)`
     width: 50px;
     filter: invert(99%) sepia(95%) saturate(12%) hue-rotate(226deg) brightness(116%) contrast(87%);
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.LAPTOP}) {
         width: 30px;
     }
 `

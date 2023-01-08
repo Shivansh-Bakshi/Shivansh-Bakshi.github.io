@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { colors, device } from "./constants";
+import { colors } from "./constants";
 import fonts from "../fonts/fonts";
+import { MAX_WIDTH } from "./device";
 
 export const Portrait = styled.img`
     position: absolute;
@@ -8,18 +9,19 @@ export const Portrait = styled.img`
     right: 0;
     width: 60vw;
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.LAPTOP}) {
         width: unset;
-        height: 50vh;
-        right: unset;
-        left: -20%;
+        height: 60vh;
+        right: -20%;
     }
 
-    @media screen and (min-width: 768px) and (${device.MEDIUM_SCREEN}) {
-        width: unset;
+    @media screen and (${MAX_WIDTH.TABLET}) {
         height: 50vh;
-        right: 0;
-        left: unset;   
+        right: unset;
+    }
+
+    @media screen and (${MAX_WIDTH.MOBILES}) {
+        height: 40vh;
     }
 `
 
@@ -34,8 +36,12 @@ export const TextContainer = styled.p`
     color: ${props => props.red ? colors.RED : colors.LIGHT_OFF_WHITE};
     display: inline;
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.TABLET}) {
         font-size: 23px;
+    }
+
+    @media screen and (${MAX_WIDTH.MOBILEM}) {
+        font-size: 20px;
     }
 `
 
@@ -50,8 +56,12 @@ export const Emphasis = styled.p`
     color: ${props => props.red ? colors.RED : colors.DARK_OFF_WHITE};
     display: inline;
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
-        font-size: 45px;
+    @media screen and (${MAX_WIDTH.TABLET}) {
+        font-size: 43px;
+    }
+
+    @media screen and (${MAX_WIDTH.MOBILEM}) {
+        font-size: 30px;
     }
 `
 
@@ -70,7 +80,7 @@ export const ButtonContainer = styled.div`
     padding-bottom: 20px;
     text-align: center;
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.TABLET}) {
         padding-top: 10px;
         padding-bottom: 10px;
     }
@@ -82,7 +92,7 @@ export const ResumeLink = styled.a`
     color: ${colors.LIGHT_OFF_WHITE};
     text-decoration: none;
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.TABLET}) {
         font-size: 23px;
     }
 `

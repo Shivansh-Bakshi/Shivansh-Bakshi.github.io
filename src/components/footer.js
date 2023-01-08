@@ -5,14 +5,15 @@ import DownIcon from '../images/down.svg';
 import { useIsOutsideClick, useMediaQuery } from '../utils/hooks';
 import ContextConsumer from '../contexts/subOverlay';
 import { SocialIcon } from 'react-social-icons';
-import { colors, device } from '../styles/constants';
+import { colors } from '../styles/constants';
 
 import Heart from '../images/heart.png';
+import { MAX_WIDTH } from '../styles/device';
 
 const FooterComponent = ({ data, set }) => {
     const [showFooter, setShowFooter] = React.useState(false);
     const wrapperRef = React.useRef(null);
-    const isMobile = useMediaQuery(device.MEDIUM_SCREEN);
+    const isTablet = useMediaQuery(MAX_WIDTH.TABLET);
 
     const handleOutsideClick = () => {
         if (showFooter) {
@@ -33,7 +34,7 @@ const FooterComponent = ({ data, set }) => {
             height: '0'
         },
         animate: {
-            height: showFooter ? '10vh' : '0'
+            height: showFooter ? '15vh' : '0'
         },
     }
 
@@ -44,41 +45,43 @@ const FooterComponent = ({ data, set }) => {
             </ExposeFooterIconContainer>
             <MainFooter initial="initial" animate="animate" variants={footer}>
                 <SocialsContainer>
-                    <FooterText>Contact Me:</FooterText>
+                    <FooterText style={{opacity: '1', marginTop: 'auto', marginBottom: 'auto'}}>Contact Me:</FooterText>
                     <SocialIcon
                         bgColor='transparent'
                         fgColor={colors.DARK_BLUE}
                         url='mailto:shivansh.bakshi@gmail.com' 
                         style={{
-                            width: isMobile ? 40 : 50,
+                            width: isTablet ? 40 : 50,
                         }} />
                     <SocialIcon
                         bgColor='transparent'
                         fgColor={colors.DARK_BLUE}
                         url='https://www.linkedin.com/in/shivansh-bakshi' 
                         style={{
-                            width: isMobile ? 40 : 50,
+                            width: isTablet ? 40 : 50,
                         }}/ >
                     <SocialIcon 
                         bgColor='transparent'
                         fgColor={colors.DARK_BLUE}
                         url='https://github.com/Shivansh-Bakshi' 
                         style={{
-                            width: isMobile ? 40 : 50,
+                            width: isTablet ? 40 : 50,
                         }} />
                     <SocialIcon 
                         bgColor='transparent'
                         fgColor={colors.DARK_BLUE}
                         url='https://www.instagram.com/shivansh.bakshi/'
                         style={{
-                            width: isMobile ? 40 : 50,
+                            width: isTablet ? 40 : 50,
                         }} />
                 </SocialsContainer>
+                <FooterText>This site uses essential cookies<br /></FooterText>
                 <TextWithImage>
-                    <FooterText style={{ marginRight: '10px' }}>This site uses cookies. Made with</FooterText>
+                    <FooterText style={{ marginRight: '10px' }}>Made with</FooterText>
                     <FooterImage src={Heart} alt='Heart' />
                     <FooterText style={{ marginLeft: '10px' }}> using React w/ Gatsby</FooterText>
                 </TextWithImage>
+                <FooterText>Copyright © 2022-2023 Shivansh Bakshi</FooterText>
             </MainFooter>
         </FooterContainer>
     )

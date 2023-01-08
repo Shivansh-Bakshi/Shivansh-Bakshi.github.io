@@ -1,7 +1,8 @@
 import React from 'react';
 import styled, { createGlobalStyle } from "styled-components";
-import { colors, device, transparency } from "./constants";
+import { colors, transparency } from "./constants";
 import { motion } from "framer-motion";
+import { MAX_WIDTH } from './device';
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -31,12 +32,15 @@ export const Overlay = styled.div`
 
 export const CanvasContainer = styled.div`
     position: absolute;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
     z-index: -1;
 `
 
 const SubOverlayComponent = styled(motion.div)`
     position: absolute;
-    opacity: 0.3;
+    opacity: 0;
     top: 0;
     width: 100vw;
     height: 100vh;
@@ -47,14 +51,20 @@ const SubOverlayComponent = styled(motion.div)`
 export const SubOverlay = ({ visible }) => {
     const subOverlay = {
         initial: {
-            opacity: 0.3,
+            opacity: 0,
             zIndex: -50
         },
         animate: {
-            opacity: visible ? 0.5 : 0.3,
+            opacity: visible ? 0.5 : 0,
             zIndex: visible ? 30 : -50,
             transition: {
-                duration: 0.2
+                duration: 0.2,
+                opacity: {
+                    delay: visible ? 0.01 : 0
+                },
+                zIndex: {
+                    delay: visible ? 0 : 0.2
+                }
             }
         },
     }
@@ -64,7 +74,7 @@ export const SubOverlay = ({ visible }) => {
     )
 }
 
-const BodyContainer = styled(motion.div)`
+const BodyContainer = styled.div`
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -76,7 +86,7 @@ const BodyContainer = styled(motion.div)`
     display: grid;
     align-items: center;
 
-    @media screen and (${device.MEDIUM_SCREEN}) {
+    @media screen and (${MAX_WIDTH.TABLET}) {
         align-items: flex-start;
     }
     /* border: 3px solid white; */
