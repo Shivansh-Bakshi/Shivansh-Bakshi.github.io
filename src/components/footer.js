@@ -81,7 +81,7 @@ const FooterComponent = ({ data, set }) => {
                     <FooterImage src={Heart} alt='Heart' />
                     <FooterText style={{ marginLeft: '10px' }}> using React w/ Gatsby</FooterText>
                 </TextWithImage>
-                <FooterText>Copyright © 2022-2023 Shivansh Bakshi</FooterText>
+                <FooterText>© 2022-2023 Shivansh Bakshi</FooterText>
             </MainFooter>
         </FooterContainer>
     )
