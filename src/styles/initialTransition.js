@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import { colors } from "./constants";
 
 export const InitialTransitionContainer = styled.div`
-    position: absolute;
+    position: fixed;
     inset: 0;
     display: flex;
+    z-index: 100;
 `
 
 export const Transition = styled(motion.div)`
@@ -14,5 +15,4 @@ export const Transition = styled(motion.div)`
     position: relative;
     width: 100%;
     background-color: ${colors.BLACK};
-    z-index: 100;
 `

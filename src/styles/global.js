@@ -27,11 +27,11 @@ export const Overlay = styled.div`
     height: 100vh;
     width: 100vw;
     background-image: linear-gradient(${colors.BLACK + transparency[95]}, ${colors.DARK_BLUE + transparency[85]});
-    position: absolute;
+    position: fixed;
 `
 
 export const CanvasContainer = styled(motion.div)`
-    position: absolute;
+    position: fixed;
     height: 0vh;
     width: 100vw;
     overflow: hidden;
@@ -39,7 +39,7 @@ export const CanvasContainer = styled(motion.div)`
 `
 
 const SubOverlayComponent = styled(motion.div)`
-    position: absolute;
+    position: fixed;
     opacity: 0;
     top: 0;
     width: 100vw;
