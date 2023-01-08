@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ButtonContainer, Emphasis, Portrait, ResumeLink, TextContainer } from '../styles/indexPage.js';
-import { BodyContainerNCol, ColNContainer, RowNContainer } from '../styles/global';
+import { BodyContainerNCol, ColumnContainer, RowContainer } from '../styles/global';
 import { useMediaQuery } from '../utils/hooks';
 
 import PortraitImage from '../images/portrait.png';
@@ -19,41 +19,37 @@ const IndexPage = () => {
     if (isTablet) {
         return(
             <BodyContainerNCol n={1}>
-                <RowNContainer n={1}>
+                <RowContainer>
                     <TextContainer>{INTROL1}<br />{INTROL2}</TextContainer>
                     <Emphasis red>{FIRST_NAME}</Emphasis><Emphasis>{LAST_NAME}<br /></Emphasis>
                     <TextContainer>{DESCRIPTION}</TextContainer>
                     <ButtonContainer>
                         <ResumeLink href='/Resume.pdf'>{DOWNLOAD_CV}</ResumeLink>
                     </ButtonContainer>
-                </RowNContainer>
+                </RowContainer>
 
-                <RowNContainer n={2}>
+                <RowContainer>
                     <Portrait src={PortraitImage} alt='Portrait Of Shivansh Bakshi' />
-                </RowNContainer>
+                </RowContainer>
             </BodyContainerNCol>
         )
     }
     return (
         <BodyContainerNCol n={2}>
-            <ColNContainer n={1}>
-                <RowNContainer n={1}>
+            <ColumnContainer>
+                <RowContainer>
                     <TextContainer>{INTROL1}<br />{INTROL2}</TextContainer>
                     <Emphasis red>{FIRST_NAME}</Emphasis><Emphasis>{LAST_NAME}<br /></Emphasis>
-                </RowNContainer>
-                <RowNContainer n={2}>
                     <TextContainer>{DESCRIPTION}</TextContainer>
-                </RowNContainer>
-                <RowNContainer n={3}>
                     <ButtonContainer>
                         <ResumeLink href='/Resume.pdf'>{DOWNLOAD_CV}</ResumeLink>
                     </ButtonContainer>
-                </RowNContainer>
-            </ColNContainer>
+                </RowContainer>
+            </ColumnContainer>
             
-            <ColNContainer n={2}>
+            <ColumnContainer>
                 <Portrait src={PortraitImage} alt='Portrait Of Shivansh Bakshi' />
-            </ColNContainer>
+            </ColumnContainer>
         </BodyContainerNCol>
     )
 }

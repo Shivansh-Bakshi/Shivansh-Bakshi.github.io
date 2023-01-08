@@ -89,7 +89,6 @@ const BodyContainer = styled.div`
     @media screen and (${MAX_WIDTH.TABLET}) {
         align-items: flex-start;
     }
-    /* border: 3px solid white; */
 `
 
 export const BodyContainerNCol = styled(BodyContainer)`
@@ -97,12 +96,12 @@ export const BodyContainerNCol = styled(BodyContainer)`
     /* border: 3px solid white; */
 `
 
-export const RowNContainer = styled.div`
+export const RowContainer = styled.div`
     grid-row: ${props => props.n};
     /* border: 3px solid white; */
 `
 
-export const ColNContainer = styled.div`
+export const ColumnContainer = styled.div`
     grid-column: ${props => props.n};
     /* border: 3px solid white; */
 `

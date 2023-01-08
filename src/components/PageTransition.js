@@ -7,22 +7,21 @@ const PageTransition = ({ animationKey, children }) => {
     const variants = {
         initial: {
           opacity: 0,
-          transform: 'translateX(-10px)'
+		  x: -15
         },
         enter: {
           opacity: 1,
-          transform: 'translateX(10px)',
+		  x: 0,
           transition: {
             duration: duration,
             delay: duration,
-            when: "beforeChildren",
           },
         },
         exit: {
           opacity: 0,
+		  x: 15,
           transition: {
             duration: duration,
-            when: "afterChildren",
           },
         },
     }
