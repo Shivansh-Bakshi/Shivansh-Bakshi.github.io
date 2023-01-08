@@ -4,11 +4,7 @@ import { BodyContainerNCol } from '../styles/global';
 const ExperiencePage = () => {
     return (
         <>
-        <BodyContainerNCol
-            style={{
-                backgroundColor: 'white',
-            }}
-        >
+        <BodyContainerNCol>
         </BodyContainerNCol>
         </>
     )

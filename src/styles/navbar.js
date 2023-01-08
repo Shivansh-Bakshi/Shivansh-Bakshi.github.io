@@ -153,7 +153,7 @@ export const PageLink = styled(Link)`
         text-decoration-thickness: 0.25rem;
     }
     
-    @media screen and (${MAX_WIDTH.LAPTOP}){
+    @media screen and (${MIN_WIDTH.LAPTOP}){
         &:hover {
             background: ${colors.RED};
             border-radius: 10px;
@@ -162,7 +162,7 @@ export const PageLink = styled(Link)`
             text-decoration: underline;
             text-underline-offset: 10px;
             text-decoration-thickness: 0.25rem;
-        }   
+        }
     }
 `
 

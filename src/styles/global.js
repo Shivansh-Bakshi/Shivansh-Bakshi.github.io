@@ -30,9 +30,9 @@ export const Overlay = styled.div`
     position: absolute;
 `
 
-export const CanvasContainer = styled.div`
+export const CanvasContainer = styled(motion.div)`
     position: absolute;
-    height: 100vh;
+    height: 0vh;
     width: 100vw;
     overflow: hidden;
     z-index: -1;

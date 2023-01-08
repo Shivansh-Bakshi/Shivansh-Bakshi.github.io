@@ -26,28 +26,6 @@ export const ProgressivePortrait = styled(ProgressiveImage)`
     }
 `
 
-export const Portrait = styled.img`
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 60vw;
-
-    @media screen and (${MAX_WIDTH.LAPTOP}) {
-        width: unset;
-        height: 60vh;
-        right: -20%;
-    }
-
-    @media screen and (${MAX_WIDTH.TABLET}) {
-        height: 50vh;
-        right: unset;
-    }
-
-    @media screen and (${MAX_WIDTH.MOBILES}) {
-        height: 40vh;
-    }
-`
-
 export const TextContainer = styled.p`
     ${fonts}
     
