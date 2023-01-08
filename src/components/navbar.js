@@ -32,11 +32,16 @@ const SubNavbar = ({ direction, data, set }) => {
             width: showNavbar ? 'calc(100px + 10vw)' : '0px'
         }
     }
+    
     const containerProps = isLaptop ? {
         initial: "initial",
         animate: "animate",
         variants: subNavbar
-    } : {}
+    } : {
+        style: {
+            width: 'auto'
+        }
+    }
 
     const handleOutsideClick = () => {
         if (showNavbar) {
