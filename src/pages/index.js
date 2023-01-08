@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { ButtonContainer, Emphasis, Portrait, ResumeLink, TextContainer } from '../styles/indexPage.js';
+import { ButtonContainer, Emphasis, Portrait, ProgressivePortrait, ResumeLink, TextContainer } from '../styles/indexPage.js';
 import { BodyContainerNCol, ColumnContainer, RowContainer } from '../styles/global';
 import { useMediaQuery } from '../utils/hooks';
 
 import PortraitImage from '../images/portrait.png';
+import PlaceholderImage from '../images/placeholder.png';
 import { MAX_WIDTH } from '../styles/device.js';
 
 const INTROL1 = 'Hey There!';
@@ -29,7 +30,10 @@ const IndexPage = () => {
                 </RowContainer>
 
                 <RowContainer>
-                    <Portrait src={PortraitImage} alt='Portrait Of Shivansh Bakshi' />
+                    <ProgressivePortrait 
+                        src={PortraitImage}
+                        placeholderSrc={PlaceholderImage}
+                    />
                 </RowContainer>
             </BodyContainerNCol>
         )
@@ -48,7 +52,10 @@ const IndexPage = () => {
             </ColumnContainer>
             
             <ColumnContainer>
-                <Portrait src={PortraitImage} alt='Portrait Of Shivansh Bakshi' />
+                <ProgressivePortrait 
+                    src={PortraitImage}
+                    placeholderSrc={PlaceholderImage}
+                />
             </ColumnContainer>
         </BodyContainerNCol>
     )
