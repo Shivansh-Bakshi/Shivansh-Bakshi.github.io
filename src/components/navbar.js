@@ -11,7 +11,6 @@ import {
     HamburgerImage, 
     LeftMenu, 
     LogoImage,
-    HomeLink
 } from '../styles/navbar';
 import LogoSVG from '../images/Logo.svg';
 import  RightHamburger from '../images/right_hamburger.svg';
