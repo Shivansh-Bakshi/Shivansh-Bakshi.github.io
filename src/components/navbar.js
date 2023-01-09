@@ -10,7 +10,8 @@ import {
     RightMenu, 
     HamburgerImage, 
     LeftMenu, 
-    LogoImage
+    LogoImage,
+    HomeLink
 } from '../styles/navbar';
 import LogoSVG from '../images/Logo.svg';
 import  RightHamburger from '../images/right_hamburger.svg';
@@ -18,6 +19,7 @@ import  LeftHamburger from '../images/left_hamburger.svg';
 import { useIsOutsideClick, useMediaQuery } from '../utils/hooks';
 import SubOverlayContextConsumer from '../contexts/subOverlay';
 import { MAX_WIDTH } from '../styles/device';
+import { Link } from 'gatsby';
 
 const SubNavbar = ({ direction, data, set }) => {
     const [showNavbar, setShowNavbar] = React.useState(false);
@@ -94,7 +96,9 @@ const SubNavbar = ({ direction, data, set }) => {
 const Logo = () => {
     return(
         <LogoContainer>
+            <Link to='/'>
             <LogoImage src={LogoSVG} alt='logo' />
+            </Link>
         </LogoContainer>
     )
 }
