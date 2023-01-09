@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const defaultContextValue = {
     data: {
-        videoUrl: '',
+        videoid: '',
         visible: false
     },
     set: () => {}

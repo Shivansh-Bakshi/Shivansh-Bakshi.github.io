@@ -2,10 +2,13 @@ import * as React from 'react';
 import { BodyContainerNCol, PageTitle } from '../styles/global';
 import { Timeline, TimelineContainer, TimelineEntry, TimelineEntryContainer, TimelineLine, TimelineLineContainer, TimelineMarkerContainer, TimelineMarkerImage } from '../styles/timeline';
 import VideoOverlayContextConsumer from '../contexts/videoOverlay';
+import { useMediaQuery } from '../utils/hooks';
 
 import DB from '../images/companies/db.png';
 import MANAS from '../images/companies/manas.png';
 import eYRC from '../images/companies/eyrc.png';
+import { EXPERIENCE } from '../videos/videoIds';
+import { MAX_WIDTH } from '../styles/device';
 
 const timelineVariants = {
     container: {
@@ -52,10 +55,10 @@ const TimelineEntryComponent = props => {
     )
 }
 
-const TimelineEntryConsumer = ({ logo, videoUrl, data, set, children }) => {    
+const TimelineEntryConsumer = ({ logo, videoid, tablet, set, children }) => {
     const handleOnClick = () => {
         set({
-            videoUrl: videoUrl,
+            videoid: videoid,
             visible: true
         })
     }
@@ -63,13 +66,13 @@ const TimelineEntryConsumer = ({ logo, videoUrl, data, set, children }) => {
     return(
         <TimelineEntryContainer
             variants={timelineVariants.child}
-            onClick={typeof videoUrl != 'undefined' ? handleOnClick : () => {}}>
+            onClick={typeof videoid != 'undefined' ? handleOnClick : () => {}}>
             <TimelineMarkerContainer>
                 <TimelineMarkerImage src={logo} alt='Timeline Marker' />
             </TimelineMarkerContainer>
-            <TimelineEntry whileHover={{scale: 1.1}} videoUrl={videoUrl}>
+            <TimelineEntry whileHover={tablet ? {} : {scale: 1.1}} videoid={videoid}>
                 {children}
-                {videoUrl &&
+                {videoid &&
                     <p style={{textAlign: 'center'}}><b>Click for Video Demonstration</b></p>
                 }
             </TimelineEntry>
@@ -78,6 +81,8 @@ const TimelineEntryConsumer = ({ logo, videoUrl, data, set, children }) => {
 }
 
 const ExperiencePage = () => {
+    const isTablet = useMediaQuery(MAX_WIDTH.TABLET);
+
     return (
             <BodyContainerNCol n={1}>
                 <PageTitle>Experience</PageTitle>
@@ -85,7 +90,7 @@ const ExperiencePage = () => {
                     <TimelineLine />
                     <Timeline>
                         <TimelineContainer initial="initial" animate="animate" variants={timelineVariants.container}>
-                            <TimelineEntryComponent logo={DB}>
+                            <TimelineEntryComponent logo={DB} tablet={isTablet}>
                                 <ExperienceEntry
                                     position='Summer Intern'
                                     where='Deutsche Bank'
@@ -110,7 +115,7 @@ const ExperiencePage = () => {
                                     </ExperienceEntry>
                             </TimelineEntryComponent>
 
-                            <TimelineEntryComponent logo={MANAS}>
+                            <TimelineEntryComponent logo={MANAS} tablet={isTablet}>
                                 <ExperienceEntry
                                     position='AI Planning Head'
                                     where='Project MANAS'
@@ -131,7 +136,7 @@ const ExperiencePage = () => {
                                     </ExperienceEntry>
                             </TimelineEntryComponent>
 
-                            <TimelineEntryComponent logo={eYRC} videoUrl='abcd'>
+                            <TimelineEntryComponent logo={eYRC} videoid={EXPERIENCE.EYRC_DEMO} tablet={isTablet}>
                                 <ExperienceEntry
                                     position='Full Stack Developer'
                                     where='e-Yantra Robotics Competition'
@@ -157,7 +162,7 @@ const ExperiencePage = () => {
                                     </ExperienceEntry>
                             </TimelineEntryComponent>
 
-                            <TimelineEntryComponent logo={MANAS}>
+                            <TimelineEntryComponent logo={MANAS} tablet={isTablet}>
                                 <ExperienceEntry
                                     position='AI Member'
                                     where='Project MANAS'

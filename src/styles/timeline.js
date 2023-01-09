@@ -151,13 +151,15 @@ export const TimelineEntry = styled(motion.div)`
     position: relative;
     padding: 20px 40px;
     border: 1px solid;
-    border-color: ${props => props.videoUrl ? colors.RED : colors.DARK_OFF_WHITE};
+    border-color: ${props => props.videoid ? colors.RED : colors.DARK_OFF_WHITE};
     border-radius: 10px;
     font-family: 'Mulish', sans-serif;
     font-size: calc(20px + 0.1vw);
     color: ${colors.LIGHT_OFF_WHITE};
     background-color: ${colors.LIGHT_BLUE + transparency[15]};
     transform-origin: 0% 50%;
+    max-height: 55vh;
+    overflow-y: scroll;
 
     p {
         margin-top: 15px;
