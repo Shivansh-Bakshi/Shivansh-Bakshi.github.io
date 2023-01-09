@@ -31,28 +31,17 @@ const timelineVariants = {
     }
 }
 
-const ExperienceEntry = ({ position, where, when, description }) => {
-    const [descriptionParagraphs, setDescriptionParagraphs] = React.useState([]);
-
-    React.useEffect(() => {
-        const splitDescription = typeof description != 'undefined' ? description.split("<br />") : [];
-        var  ps = [];
-        for (let i = 0; i < splitDescription.length; i++) {
-            ps.push(<p key={i} style={{marginTop: '15px'}}>{splitDescription[i]}</p>)
-        }
-
-        setDescriptionParagraphs(ps);
-    }, [description])
-
+const ExperienceEntry = ({ position, where, when, children }) => {
     return(
         <>
         <h2>{ position }</h2>
         <h4><i>{ where }</i></h4>
         <small>{ when.from } <span>&#8211;</span> { when.to }</small>
-        {descriptionParagraphs}
+        {children}
         </>
     )
 }
+
 
 const TimelineEntryComponent = ({ logo, children }) => {
     return(
@@ -82,16 +71,22 @@ const ExperiencePage = () => {
                                     when={{
                                         from:'May 2022',
                                         to: "July 2022"
-                                    }}                            
-                                    description='I designed and developed a Performance Testing Framework compatible with Gatling, 
-                                    enabling developers to write tests for Quarkus microservices communicating over 
-                                    Google Cloud Pub/Sub.<br />
-                                    The tests were generalized over the number of microservices being tested. i.e., 
-                                    it could test the overall working of any number of microservices if their communicating 
-                                    messages had a common identifier.<br />
-                                    I also had the opportunity to work with automated deployment of services to Kubernetes with 
-                                    Skaffold in order to integrate the tests into the CI/CD pipeline.'
-                                />
+                                    }}>
+                                        <p>
+                                            I designed and developed a Performance Testing Framework compatible with Gatling, 
+                                            enabling developers to write tests for Quarkus microservices communicating over 
+                                            Google Cloud Pub/Sub.
+                                        </p>
+                                        <p>
+                                            The tests were generalized over the number of microservices being tested. i.e., 
+                                            it could test the overall working of any number of microservices if their 
+                                            communicating messages had a common identifier.
+                                        </p>
+                                        <p>
+                                            I also had the opportunity to work with automated deployment of services to 
+                                            Kubernetes with Skaffold in order to integrate the tests into the CI/CD pipeline.
+                                        </p>
+                                    </ExperienceEntry>
                             </TimelineEntryComponent>
 
                             <TimelineEntryComponent logo={MANAS}>
@@ -101,14 +96,18 @@ const ExperiencePage = () => {
                                     when={{
                                         from:'February 2021',
                                         to: "February 2022"
-                                    }}                            
-                                    description='Lead the AI Team for the Object Detection, Classification, and Localisation (ODCL) 
-                                    tasks for the AUVSI-SUAS competition, successfully implementing the ODCL pipeline to correctly 
-                                    categorize objects on the ground from a height of upto 150ft using Computer Vision, Segmentation, 
-                                    and CNNs.<br />
-                                    Also developed the React Native app to capture and Geo-tag high-resolution images and store for 
-                                    ODCL pipeline entry.'
-                                />
+                                    }}>
+                                        <p>
+                                            Lead the AI Team for the Object Detection, Classification, and Localisation 
+                                            (ODCL) tasks for the AUVSI-SUAS competition, successfully implementing the 
+                                            ODCL pipeline to correctly categorize objects on the ground from a height 
+                                            of upto 150ft using Computer Vision, Segmentation, and CNNs.
+                                        </p>
+                                        <p>
+                                            Also developed the React Native app to capture and Geo-tag high-resolution 
+                                            images and store for ODCL pipeline entry.
+                                        </p>
+                                    </ExperienceEntry>
                             </TimelineEntryComponent>
 
                             <TimelineEntryComponent logo={eYRC}>
@@ -118,16 +117,23 @@ const ExperiencePage = () => {
                                     when={{
                                         from:'October 2020',
                                         to: "April 2021"
-                                    }}                            
-                                    description='Developed an end-to-end automated warehouse system with Python, ROS, OpenCV, and 
-                                    a real-time dashboard integrated with Google Apps Scripting and a live Dashboard hosted on 
-                                    GitHub Pages.<br />
-                                    Detection of package properties such as destination and priority 
-                                    was done through QR Processing with OpenCV, and UR5 arms were used for controlling placement 
-                                    and sorting of packages, along with dynamic conveyor belt control.<br />
-                                    A Google Sheets WebApp Server was responsible for tracking order and package delivery status, 
-                                    and was queried for presenting the information with a live order map on a Dashboard Website.'
-                                />
+                                    }}>
+                                        <p>
+                                            Developed an end-to-end automated warehouse system with Python, ROS, OpenCV, and 
+                                            a real-time dashboard integrated with Google Apps Scripting and a live Dashboard 
+                                            hosted on GitHub Pages.
+                                        </p>
+                                        <p>
+                                            Detection of package properties such as destination and priority was done through 
+                                            QR Processing with OpenCV, and UR5 arms were used for controlling placement 
+                                            and sorting of packages, along with dynamic conveyor belt control.
+                                        </p>
+                                        <p>
+                                            A Google Sheets WebApp Server was responsible for tracking order and package 
+                                            delivery status, and was queried for presenting the information with a live 
+                                            order map on a Dashboard Website.
+                                        </p>
+                                    </ExperienceEntry>
                             </TimelineEntryComponent>
 
                             <TimelineEntryComponent logo={MANAS}>
@@ -137,16 +143,26 @@ const ExperiencePage = () => {
                                     when={{
                                         from:'Feb 2020',
                                         to: "Feb 2021"
-                                    }}                            
-                                    description='Learned about ML/AI from scratch.<br />
-                                    Implemented basic linear and logistic regression models using only NumPy.
-                                    Also implemented Feed-Forward Deep Neural Networks and CNNs from scratch for MNIST classification and 
-                                    Movie Genre Prediction from the Poster.
-                                    Utilised TensorFlow to develop a Sentiment Analysis model using LSTMs to summarise Movie Reviews 
-                                    into Positive, Neutral, or Negative.<br />
-                                    Implemented clustering on highly dense data with the help of Gaussian Mixture Models.<br />
-                                    Deployed CenterNet for real-time Object Detection over live feed from ZedCamera over ROS.'
-                                />
+                                    }}>
+                                        <p>
+                                            Learned about ML/AI from scratch.
+                                        </p>
+                                        <p>
+                                            Implemented basic linear and logistic regression models using only NumPy.
+                                            Also implemented Feed-Forward Deep Neural Networks and CNNs from scratch for 
+                                            MNIST classification and Movie Genre Prediction from the Poster.
+                                            Utilised TensorFlow to develop a Sentiment Analysis model using LSTMs to 
+                                            summarise Movie Reviews into Positive, Neutral, or Negative.
+                                        </p>
+                                        <p>
+                                            Implemented clustering on highly dense data with the help of Gaussian Mixture 
+                                            Models.
+                                        </p>
+                                        <p>
+                                            Deployed CenterNet for real-time Object Detection over live feed from ZedCamera 
+                                            over ROS.
+                                        </p>
+                                    </ExperienceEntry>
                             </TimelineEntryComponent>
                         </TimelineContainer>
                     </Timeline>

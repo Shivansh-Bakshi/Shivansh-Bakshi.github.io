@@ -155,7 +155,12 @@ export const TimelineEntry = styled(motion.div)`
     font-family: 'Mulish', sans-serif;
     font-size: calc(20px + 0.1vw);
     color: ${colors.LIGHT_OFF_WHITE};
+    background-color: ${colors.LIGHT_BLUE + transparency[15]};
     transform-origin: 0% 50%;
+
+    p {
+        margin-top: 15px;
+    }
 
     @media screen and (${MAX_WIDTH.TABLET}){
         padding: 20px 20px;
