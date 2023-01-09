@@ -158,8 +158,6 @@ export const TimelineEntry = styled(motion.div)`
     color: ${colors.LIGHT_OFF_WHITE};
     background-color: ${colors.LIGHT_BLUE + transparency[15]};
     transform-origin: 0% 50%;
-    max-height: 55vh;
-    overflow-y: scroll;
 
     p {
         margin-top: 15px;
@@ -169,6 +167,8 @@ export const TimelineEntry = styled(motion.div)`
         padding: 20px 20px;
         top: 0;
         font-size: 17px;
+        max-height: 55vh;
+        overflow-y: scroll;
     }
 
     @media screen and (${MAX_WIDTH.MOBILEL}) {
