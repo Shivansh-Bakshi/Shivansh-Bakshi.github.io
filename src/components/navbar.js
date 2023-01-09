@@ -16,7 +16,7 @@ import LogoSVG from '../images/Logo.svg';
 import  RightHamburger from '../images/right_hamburger.svg';
 import  LeftHamburger from '../images/left_hamburger.svg';
 import { useIsOutsideClick, useMediaQuery } from '../utils/hooks';
-import ContextConsumer from '../contexts/subOverlay';
+import SubOverlayContextConsumer from '../contexts/subOverlay';
 import { MAX_WIDTH } from '../styles/device';
 
 const SubNavbar = ({ direction, data, set }) => {
@@ -103,14 +103,14 @@ const Navbar = () => {
     return(
         <nav>
             <NavbarContainer>
-                <ContextConsumer>
+                <SubOverlayContextConsumer>
                     {({ data, set }) => (
                         <>
                         <SubNavbar direction='left' data={data} set={set} />
                         <SubNavbar direction='right' data={data} set={set} />
                         </>
                     )}
-                </ContextConsumer>
+                </SubOverlayContextConsumer>
                 <Logo />
             </NavbarContainer>
         </nav>

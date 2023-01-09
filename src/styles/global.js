@@ -59,8 +59,8 @@ export const SubOverlay = ({ visible }) => {
             opacity: visible ? 0.5 : 0,
             zIndex: visible ? 30 : -50,
             transition: {
-                duration: 0.2,
                 opacity: {
+                    duration: 0.1,
                     delay: visible ? 0.01 : 0
                 },
                 zIndex: {

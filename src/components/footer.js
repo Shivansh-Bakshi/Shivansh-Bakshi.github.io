@@ -3,7 +3,7 @@ import { ExposeFooterIcon, ExposeFooterIconContainer, FooterContainer, FooterIma
 import UpIcon from '../images/up.svg';
 import DownIcon from '../images/down.svg';
 import { useIsOutsideClick, useMediaQuery } from '../utils/hooks';
-import ContextConsumer from '../contexts/subOverlay';
+import SubOverlayContextConsumer from '../contexts/subOverlay';
 import { SocialIcon } from 'react-social-icons';
 import { colors } from '../styles/constants';
 
@@ -89,11 +89,11 @@ const FooterComponent = ({ data, set }) => {
 
 const Footer = () => {
     return(
-        <ContextConsumer>
+        <SubOverlayContextConsumer>
             {({ data, set }) => (
                 <FooterComponent data={data} set={set} />
             )}
-        </ContextConsumer>
+        </SubOverlayContextConsumer>
     )
 }
 

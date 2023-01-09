@@ -150,7 +150,8 @@ export const TimelineEntry = styled(motion.div)`
 
     position: relative;
     padding: 20px 40px;
-    border: 1px solid ${colors.DARK_OFF_WHITE};
+    border: 1px solid;
+    border-color: ${props => props.videoUrl ? colors.RED : colors.DARK_OFF_WHITE};
     border-radius: 10px;
     font-family: 'Mulish', sans-serif;
     font-size: calc(20px + 0.1vw);

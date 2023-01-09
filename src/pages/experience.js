@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { BodyContainerNCol, PageTitle } from '../styles/global';
 import { Timeline, TimelineContainer, TimelineEntry, TimelineEntryContainer, TimelineLine, TimelineLineContainer, TimelineMarkerContainer, TimelineMarkerImage } from '../styles/timeline';
+import VideoOverlayContextConsumer from '../contexts/videoOverlay';
 
 import DB from '../images/companies/db.png';
 import MANAS from '../images/companies/manas.png';
@@ -43,14 +44,34 @@ const ExperienceEntry = ({ position, where, when, children }) => {
 }
 
 
-const TimelineEntryComponent = ({ logo, children }) => {
+const TimelineEntryComponent = props => {
     return(
-        <TimelineEntryContainer variants={timelineVariants.child}>
+        <VideoOverlayContextConsumer>
+            {({ data, set}) => (<TimelineEntryConsumer {...props} data={data} set={set} />)}
+        </VideoOverlayContextConsumer>
+    )
+}
+
+const TimelineEntryConsumer = ({ logo, videoUrl, data, set, children }) => {    
+    const handleOnClick = () => {
+        set({
+            videoUrl: videoUrl,
+            visible: true
+        })
+    }
+    
+    return(
+        <TimelineEntryContainer
+            variants={timelineVariants.child}
+            onClick={typeof videoUrl != 'undefined' ? handleOnClick : () => {}}>
             <TimelineMarkerContainer>
                 <TimelineMarkerImage src={logo} alt='Timeline Marker' />
             </TimelineMarkerContainer>
-            <TimelineEntry whileHover={{scale: 1.1}}>
+            <TimelineEntry whileHover={{scale: 1.1}} videoUrl={videoUrl}>
                 {children}
+                {videoUrl &&
+                    <p style={{textAlign: 'center'}}><b>Click for Video Demonstration</b></p>
+                }
             </TimelineEntry>
         </TimelineEntryContainer>
     )
@@ -110,7 +131,7 @@ const ExperiencePage = () => {
                                     </ExperienceEntry>
                             </TimelineEntryComponent>
 
-                            <TimelineEntryComponent logo={eYRC}>
+                            <TimelineEntryComponent logo={eYRC} videoUrl='abcd'>
                                 <ExperienceEntry
                                     position='Full Stack Developer'
                                     where='e-Yantra Robotics Competition'

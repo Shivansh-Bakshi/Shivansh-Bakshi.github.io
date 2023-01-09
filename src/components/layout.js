@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { CanvasContainer, Container, GlobalStyle, Overlay, SubOverlay } from '../styles/global';
-import ContextConsumer, { SubOverlayContextProvider } from '../contexts/subOverlay';
+import SubOverlayContextConsumer, { SubOverlayContextProvider } from '../contexts/subOverlay';
 import InitialTransition from './initialTransition';
 import Navbar from './navbar';
 import Footer from './footer';
 import PageTransition from './PageTransition';
 import { transitionEffects } from '../styles/constants';
+import VideoOverlayContextConsumer, { VideoOverlayContextProvider } from '../contexts/videoOverlay';
+import VideoComponent from './video';
 
 const Background = React.lazy(() => import('./background'));
 
@@ -24,10 +26,11 @@ const Layout = props => {
         <>
             <GlobalStyle />
             <SubOverlayContextProvider>
+                <VideoOverlayContextProvider>
                 <InitialTransition />
-                <ContextConsumer>
+                <SubOverlayContextConsumer>
                     {({ data }) => (<SubOverlay {...data}/>)}
-                </ContextConsumer>
+                </SubOverlayContextConsumer>
                 
                 <Navbar />
                 <React.Suspense>
@@ -47,7 +50,12 @@ const Layout = props => {
                 </PageTransition>
                                 
                 <Footer />
+                <VideoOverlayContextConsumer>
+                    {({data, set}) => (<VideoComponent {...data} set={set} />)}
+                </VideoOverlayContextConsumer>
+                </VideoOverlayContextProvider>
             </SubOverlayContextProvider>
+
         </>
     )
 }
