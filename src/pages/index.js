@@ -17,6 +17,11 @@ const DOWNLOAD_CV = 'Download CV';
 const IndexPage = () => {
     const isTablet = useMediaQuery(MAX_WIDTH.TABLET)
 
+    const buttonAnimation = {
+        whileHover: {scale: 1.1},
+        whileTap: {scale: 0.9}
+    }
+
     if (isTablet) {
         return(
             <BodyContainerNCol n={1}>
@@ -24,7 +29,7 @@ const IndexPage = () => {
                     <TextContainer>{INTROL1}<br />{INTROL2}</TextContainer>
                     <Emphasis red>{FIRST_NAME}</Emphasis><Emphasis>{LAST_NAME}<br /></Emphasis>
                     <TextContainer>{DESCRIPTION}</TextContainer>
-                    <ButtonContainer>
+                    <ButtonContainer {...buttonAnimation}>
                         <ResumeLink href='/Resume.pdf'>{DOWNLOAD_CV}</ResumeLink>
                     </ButtonContainer>
                 </RowContainer>
@@ -45,7 +50,7 @@ const IndexPage = () => {
                     <TextContainer>{INTROL1}<br />{INTROL2}</TextContainer>
                     <Emphasis red>{FIRST_NAME}</Emphasis><Emphasis>{LAST_NAME}<br /></Emphasis>
                     <TextContainer>{DESCRIPTION}</TextContainer>
-                    <ButtonContainer>
+                    <ButtonContainer {...buttonAnimation}>
                         <ResumeLink href='/Resume.pdf'>{DOWNLOAD_CV}</ResumeLink>
                     </ButtonContainer>
                 </RowContainer>

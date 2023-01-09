@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import { colors, transparency } from "./constants";
 import { motion } from "framer-motion";
 import { MAX_WIDTH } from './device';
+import fonts from '../fonts/fonts';
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -93,15 +94,42 @@ const BodyContainer = styled.div`
 
 export const BodyContainerNCol = styled(BodyContainer)`
     grid-template-columns: ${props => "1fr ".repeat(props.n).trim()};
-    /* border: 3px solid white; */
 `
 
 export const RowContainer = styled.div`
     grid-row: ${props => props.n};
-    /* border: 3px solid white; */
 `
 
 export const ColumnContainer = styled.div`
     grid-column: ${props => props.n};
-    /* border: 3px solid white; */
+`
+
+export const PageTitle = styled.p`
+    ${fonts}
+
+    position: absolute;
+    top: 0;
+    font-size: 60px;
+    font-family: 'Nexa', sans-serif;
+    /* letter-spacing: 3px; */
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-color: ${colors.RED};
+    text-decoration-thickness: 0.25rem;
+    color: ${colors.RED};
+    z-index: 1;
+
+    @media screen and (${MAX_WIDTH.TABLET}) {
+        font-size: 40px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    @media screen and (${MAX_WIDTH.MOBILEL}) {
+        font-size: 30px;
+    }
+
+    @media screen and (${MAX_WIDTH.MOBILEM}) {
+        font-size: 20px;
+    }
 `

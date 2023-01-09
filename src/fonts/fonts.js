@@ -7,6 +7,8 @@ import LaneRegular from './Lane/LANENAR_.ttf';
 
 import MulishRegular from './Mulish/Mulish-Regular.ttf';
 
+import NexaExtraBold from './Nexa/Nexa-ExtraBold.ttf';
+
 const fonts = css`
     @font-face {
         font-family: 'Source Code Pro';
@@ -33,6 +35,13 @@ const fonts = css`
         font-family: 'Mulish';
         src: url('${MulishRegular}') format('truetype');
         font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Nexa';
+        src: url('${NexaExtraBold}') format('truetype');
+        font-weight: 700;
         font-style: normal;
     }
 `

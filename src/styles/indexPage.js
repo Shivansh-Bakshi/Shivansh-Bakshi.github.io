@@ -3,6 +3,7 @@ import { colors } from "./constants";
 import fonts from "../fonts/fonts";
 import { MAX_WIDTH } from "./device";
 import ProgressiveImage from "../components/ProgressiveImage";
+import { motion } from "framer-motion";
 
 export const ProgressivePortrait = styled(ProgressiveImage)`
     position: absolute;
@@ -68,7 +69,7 @@ export const Emphasis = styled.p`
 
 const buttonWidth = '200px';
 const buttonHeight = '70px';
-export const ButtonContainer = styled.div`
+export const ButtonContainer = styled(motion.div)`
     ${fonts}
 
     position: relative;
