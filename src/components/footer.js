@@ -40,10 +40,10 @@ const FooterComponent = ({ data, set }) => {
 
     return(
         <FooterContainer>
-            <ExposeFooterIconContainer onClick={handleShowFooter} ref={wrapperRef}>
+            <ExposeFooterIconContainer onClick={handleShowFooter}>
                 <ExposeFooterIcon src={showFooter ? DownIcon : UpIcon} alt='Arrow' />
             </ExposeFooterIconContainer>
-            <MainFooter initial="initial" animate="animate" variants={footer}>
+            <MainFooter initial="initial" animate="animate" variants={footer} ref={wrapperRef}>
                 <SocialsContainer>
                     <FooterText style={{opacity: '1', marginTop: 'auto', marginBottom: 'auto'}}>Contact Me:</FooterText>
                     <SocialIcon
