@@ -6,12 +6,12 @@ import {
     PageLink, 
     RightContainer, 
     NavbarContainer, 
-    UnorderedList, 
+    NavigationList, 
     RightMenu, 
     HamburgerImage, 
     LeftMenu, 
     LogoImage,
-} from '../styles/navbar';
+} from '../styles';
 import LogoSVG from '../images/Logo.svg';
 import  RightHamburger from '../images/right_hamburger.svg';
 import  LeftHamburger from '../images/left_hamburger.svg';
@@ -61,10 +61,10 @@ const SubNavbar = ({ direction, data, set }) => {
         return (
             <>
             <LeftContainer {...containerProps}>
-                <UnorderedList>
+                <NavigationList>
                     <ListItem><PageLink to="/blog" activeClassName='active'>Blog</PageLink></ListItem>
                     <ListItem><PageLink to="/piano" activeClassName='active'>Piano</PageLink></ListItem>
-                </UnorderedList>
+                </NavigationList>
             </LeftContainer>
             <LeftMenu onClick={handleShowNavbar} ref={wrapperRef}>
                 <HamburgerImage src={LeftHamburger} alt='left_hamburger' />
@@ -76,13 +76,13 @@ const SubNavbar = ({ direction, data, set }) => {
     return (
         <>
         <RightContainer {...containerProps}>
-            <UnorderedList>
+            <NavigationList>
                 <ListItem><PageLink to="/" activeClassName='active'>Home</PageLink></ListItem>
                 <ListItem><PageLink to="/experience" activeClassName='active'>Experience</PageLink></ListItem>
                 <ListItem><PageLink to="/projects" activeClassName='active'>Projects</PageLink></ListItem>
                 <ListItem><PageLink to="/certificates" activeClassName='active'>Certificates</PageLink></ListItem>
                 <ListItem><PageLink to="/contact" activeClassName='active'>Contact</PageLink></ListItem>
-            </UnorderedList>
+            </NavigationList>
         </RightContainer>
         <RightMenu onClick={handleShowNavbar} ref={wrapperRef}>
             <HamburgerImage src={RightHamburger} alt='right_hamburger' />

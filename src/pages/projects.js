@@ -1,9 +1,11 @@
 import * as React from 'react';
+import { BodyContainerNCol, PageTitle } from '../styles/global';
 
 const ProjectsPage = () => {
     return (
-        <>
-        </>
+        <BodyContainerNCol n={1}>
+            <PageTitle>Projects</PageTitle>
+        </BodyContainerNCol>
     )
 }
 

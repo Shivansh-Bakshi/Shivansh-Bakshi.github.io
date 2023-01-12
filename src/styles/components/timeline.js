@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import fonts from "../fonts/fonts";
-import { colors, transparency } from "./constants";
-import { MAX_WIDTH } from "./device";
+import fonts from "../../fonts/fonts";
+import { colors, transparency } from "../constants";
+import { MAX_WIDTH } from "../device";
 
 export const TimelineLineContainer = styled.div`
     height: 80%;

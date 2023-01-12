@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { colors } from "./constants";
-import fonts from "../fonts/fonts";
-import { MAX_WIDTH } from "./device";
-import ProgressiveImage from "../components/ProgressiveImage";
+import { colors } from "../constants";
+import fonts from "../../fonts/fonts";
+import { MAX_WIDTH } from "../device";
+import ProgressiveImage from "../../components/ProgressiveImage";
 import { motion } from "framer-motion";
 
 export const ProgressivePortrait = styled(ProgressiveImage)`

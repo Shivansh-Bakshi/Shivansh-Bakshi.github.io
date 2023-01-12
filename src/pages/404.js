@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BodyContainerNCol } from '../styles/global';
-import { Error, Message } from '../styles/404';
+import { Error, Message } from '../styles';
 
 const NotFoundPage = () => {
     return (

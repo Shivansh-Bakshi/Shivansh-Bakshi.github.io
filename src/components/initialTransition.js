@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { transitionEffects } from '../styles/constants';
-import { InitialTransitionContainer, Transition } from '../styles/initialTransition';
+import { InitialTransitionContainer, Transition } from '../styles';
 
 const blackBox = {
     initial: {

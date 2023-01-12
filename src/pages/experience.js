@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BodyContainerNCol, PageTitle } from '../styles/global';
-import { Timeline, TimelineContainer, TimelineEntry, TimelineEntryContainer, TimelineLine, TimelineLineContainer, TimelineMarkerContainer, TimelineMarkerImage } from '../styles/timeline';
+import { Timeline, TimelineContainer, TimelineEntry, TimelineEntryContainer, TimelineLine, TimelineLineContainer, TimelineMarkerContainer, TimelineMarkerImage } from '../styles';
 import VideoOverlayContextConsumer from '../contexts/videoOverlay';
 import { useMediaQuery } from '../utils/hooks';
 

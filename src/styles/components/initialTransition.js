@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { colors } from "./constants";
+import { colors } from "../constants";
 
 export const InitialTransitionContainer = styled.div`
     position: absolute;

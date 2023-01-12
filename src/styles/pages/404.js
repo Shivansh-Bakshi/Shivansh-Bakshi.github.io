@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import fonts from "../fonts/fonts";
-import { colors } from "./constants";
-import { MAX_WIDTH } from "./device";
+import fonts from "../../fonts/fonts";
+import { colors } from "../constants";
+import { MAX_WIDTH } from "../device";
 
 export const Error = styled.h1`
     ${fonts}

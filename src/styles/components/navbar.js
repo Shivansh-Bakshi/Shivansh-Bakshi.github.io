@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
-import fonts from "../fonts/fonts";
-import { colors, transparency } from "./constants";
+import fonts from "../../fonts/fonts";
+import { colors, transparency } from "../constants";
 import { motion } from "framer-motion";
-import { MAX_WIDTH, MIN_WIDTH } from "./device";
+import { MAX_WIDTH, MIN_WIDTH } from "../device";
 
 export const NavbarContainer = styled.div`
     position: fixed;
@@ -106,7 +106,7 @@ export const RightMenu = styled.div`
     }
 `
 
-export const UnorderedList = styled.ul`
+export const NavigationList = styled.ul`
     display: flex;
     justify-content: space-between;
     list-style-type: none;

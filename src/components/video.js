@@ -1,5 +1,5 @@
 import React from 'react';
-import { VideoContainer, VideoPlayer, VideoPlayerContainer } from '../styles/video';
+import { VideoContainer, VideoPlayer, VideoPlayerContainer } from '../styles';
 
 const getIframeProps = (videoid) => {
     return({

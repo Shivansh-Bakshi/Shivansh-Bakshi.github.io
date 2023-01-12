@@ -1,5 +1,14 @@
 import * as React from 'react';
-import { ExposeFooterIcon, ExposeFooterIconContainer, FooterContainer, FooterImage, FooterText, MainFooter, SocialsContainer, TextWithImage } from '../styles/footer';
+import {
+    ExposeFooterIcon,
+    ExposeFooterIconContainer,
+    FooterContainer,
+    FooterImage,
+    FooterText,
+    MainFooter,
+    SocialsContainer,
+    TextWithImage
+} from '../styles';
 import UpIcon from '../images/up.svg';
 import DownIcon from '../images/down.svg';
 import { useIsOutsideClick, useMediaQuery } from '../utils/hooks';

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { colors } from './constants';
+import { colors } from '../constants';
 import { motion } from 'framer-motion';
-import fonts from "../fonts/fonts";
-import { MAX_WIDTH } from './device';
+import fonts from "../../fonts/fonts";
+import { MAX_WIDTH } from '../device';
 
 export const FooterContainer = styled.div`
     width: 100vw;
