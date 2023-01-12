@@ -42,7 +42,7 @@ const timelineVariants = {
     }
 }
 
-const ExperienceEntry = ({ position, where, when, children }) => {
+const Entry = ({ position, where, when, children }) => {
     return(
         <>
         <h2>{ position }</h2>
@@ -80,7 +80,7 @@ const TimelineEntryConsumer = ({ logo, videoid, tablet, set, children }) => {
             <TimelineEntry whileHover={tablet ? {} : {scale: 1.1}} videoid={videoid}>
                 {children}
                 {videoid &&
-                    <p style={{textAlign: 'center'}}><b>Click for Video Demonstration</b></p>
+                    <p style={{textAlign: 'center', textDecoration: 'underline'}}><b>Click for Video Demonstration</b></p>
                 }
             </TimelineEntry>
         </TimelineEntryContainer>
@@ -90,6 +90,7 @@ const TimelineEntryConsumer = ({ logo, videoid, tablet, set, children }) => {
 const ExperiencePage = () => {
     const isTablet = useMediaQuery(MAX_WIDTH.TABLET);
 
+
     return (
             <BodyContainerNCol n={1}>
                 <PageTitle>Experience</PageTitle>
@@ -98,7 +99,7 @@ const ExperiencePage = () => {
                     <PageOverflowContainer>
                         <TimelineContainer initial="initial" animate="animate" variants={timelineVariants.container}>
                             <TimelineEntryComponent logo={DB} tablet={isTablet}>
-                                <ExperienceEntry
+                                <Entry
                                     position='Summer Intern'
                                     where='Deutsche Bank'
                                     when={{
@@ -119,11 +120,11 @@ const ExperiencePage = () => {
                                             I also had the opportunity to work with automated deployment of services to 
                                             Kubernetes with Skaffold in order to integrate the tests into the CI/CD pipeline.
                                         </p>
-                                    </ExperienceEntry>
+                                    </Entry>
                             </TimelineEntryComponent>
 
                             <TimelineEntryComponent logo={MANAS} tablet={isTablet}>
-                                <ExperienceEntry
+                                <Entry
                                     position='AI Planning Head'
                                     where='Project MANAS'
                                     when={{
@@ -140,11 +141,11 @@ const ExperiencePage = () => {
                                             Also developed the React Native app to capture and Geo-tag high-resolution 
                                             images and store for ODCL pipeline entry.
                                         </p>
-                                    </ExperienceEntry>
+                                    </Entry>
                             </TimelineEntryComponent>
 
                             <TimelineEntryComponent logo={eYRC} videoid={EXPERIENCE.EYRC_DEMO} tablet={isTablet}>
-                                <ExperienceEntry
+                                <Entry
                                     position='Full Stack Developer'
                                     where='e-Yantra Robotics Competition'
                                     when={{
@@ -166,11 +167,11 @@ const ExperiencePage = () => {
                                             delivery status, and was queried for presenting the information with a live 
                                             order map on a Dashboard Website.
                                         </p>
-                                    </ExperienceEntry>
+                                    </Entry>
                             </TimelineEntryComponent>
 
                             <TimelineEntryComponent logo={MANAS} tablet={isTablet}>
-                                <ExperienceEntry
+                                <Entry
                                     position='AI Member'
                                     where='Project MANAS'
                                     when={{
@@ -195,7 +196,7 @@ const ExperiencePage = () => {
                                             Deployed CenterNet for real-time Object Detection over live feed from ZedCamera 
                                             over ROS.
                                         </p>
-                                    </ExperienceEntry>
+                                    </Entry>
                             </TimelineEntryComponent>
                         </TimelineContainer>
                     </PageOverflowContainer>
