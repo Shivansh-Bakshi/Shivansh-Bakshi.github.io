@@ -47,10 +47,12 @@ export const Timeline = styled.div`
     max-height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
+    scroll-behavior: smooth;
 
     @media screen and (${MAX_WIDTH.TABLET}) {
         overflow-x: scroll;
         overflow-y: hidden;
+        scroll-snap-type: x mandatory;
         white-space: nowrap;
     }
 
@@ -134,6 +136,7 @@ export const TimelineEntryContainer = styled(motion.li)`
 
     @media screen and (${MAX_WIDTH.TABLET}) {
         display: inline-block;
+        scroll-snap-align: center;
         padding: 30px 20px;
         vertical-align: top;
         white-space: normal;
