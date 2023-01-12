@@ -13,7 +13,7 @@ export const FooterContainer = styled.div`
     z-index: 50;
 `
 
-export const MainFooter = styled(motion.div)`
+export const FooterCore = styled(motion.div)`
     position: relative;
     width: 40vw;
     left: 50%;
@@ -36,7 +36,7 @@ export const MainFooter = styled(motion.div)`
     }
 `
 
-export const ExposeFooterIconContainer = styled(motion.div)`
+export const FooterExposeIconContainer = styled(motion.div)`
     position: relative;
     width: 50px;
     left: 50%;
@@ -49,17 +49,17 @@ export const ExposeFooterIconContainer = styled(motion.div)`
     cursor: pointer;
 `
 
-export const ExposeFooterIcon = styled.img`
+export const FooterExposeIcon = styled.img`
     width: 30px;
 `
 
-export const SocialsContainer = styled.div`
+export const FooterSocialsContainer = styled.div`
     display: flex;
     justify-content: center;
     opacity: 0.7;
 `
 
-export const TextWithImage = styled.div`
+export const FooterInlineTextContainer = styled.div`
     display: flex;
     justify-content: center;
 `

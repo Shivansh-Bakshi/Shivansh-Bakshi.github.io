@@ -8,7 +8,7 @@ export const InitialTransitionContainer = styled.div`
     display: flex;
 `
 
-export const Transition = styled(motion.div)`
+export const InitialTransitionCore = styled(motion.div)`
     top: 0;
     height: 100vh;
     position: relative;

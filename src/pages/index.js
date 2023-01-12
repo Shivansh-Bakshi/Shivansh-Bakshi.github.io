@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ButtonContainer, Emphasis, ProgressivePortrait, ResumeLink, TextContainer } from '../styles';
+import { HomeButtonContainer, HomeEmphasis, HomeProgressivePortrait, HomeResumeLink, HomeTextContainer } from '../styles';
 import { BodyContainerNCol, ColumnContainer, RowContainer } from '../styles/global';
 import { useMediaQuery } from '../utils/hooks';
 
@@ -26,16 +26,16 @@ const IndexPage = () => {
         return(
             <BodyContainerNCol n={1}>
                 <RowContainer>
-                    <TextContainer>{INTROL1}<br />{INTROL2}</TextContainer>
-                    <Emphasis red>{FIRST_NAME}</Emphasis><Emphasis>{LAST_NAME}<br /></Emphasis>
-                    <TextContainer>{DESCRIPTION}</TextContainer>
-                    <ButtonContainer {...buttonAnimation}>
-                        <ResumeLink href='/Resume.pdf'>{DOWNLOAD_CV}</ResumeLink>
-                    </ButtonContainer>
+                    <HomeTextContainer>{INTROL1}<br />{INTROL2}</HomeTextContainer>
+                    <HomeEmphasis red>{FIRST_NAME}</HomeEmphasis><HomeEmphasis>{LAST_NAME}<br /></HomeEmphasis>
+                    <HomeTextContainer>{DESCRIPTION}</HomeTextContainer>
+                    <HomeButtonContainer {...buttonAnimation}>
+                        <HomeResumeLink href='/Resume.pdf'>{DOWNLOAD_CV}</HomeResumeLink>
+                    </HomeButtonContainer>
                 </RowContainer>
 
                 <RowContainer>
-                    <ProgressivePortrait 
+                    <HomeProgressivePortrait 
                         src={PortraitImage}
                         placeholderSrc={PlaceholderImage}
                     />
@@ -47,17 +47,17 @@ const IndexPage = () => {
         <BodyContainerNCol n={2}>
             <ColumnContainer>
                 <RowContainer>
-                    <TextContainer>{INTROL1}<br />{INTROL2}</TextContainer>
-                    <Emphasis red>{FIRST_NAME}</Emphasis><Emphasis>{LAST_NAME}<br /></Emphasis>
-                    <TextContainer>{DESCRIPTION}</TextContainer>
-                    <ButtonContainer {...buttonAnimation}>
-                        <ResumeLink href='/Resume.pdf'>{DOWNLOAD_CV}</ResumeLink>
-                    </ButtonContainer>
+                    <HomeTextContainer>{INTROL1}<br />{INTROL2}</HomeTextContainer>
+                    <HomeEmphasis red>{FIRST_NAME}</HomeEmphasis><HomeEmphasis>{LAST_NAME}<br /></HomeEmphasis>
+                    <HomeTextContainer>{DESCRIPTION}</HomeTextContainer>
+                    <HomeButtonContainer {...buttonAnimation}>
+                        <HomeResumeLink href='/Resume.pdf'>{DOWNLOAD_CV}</HomeResumeLink>
+                    </HomeButtonContainer>
                 </RowContainer>
             </ColumnContainer>
             
             <ColumnContainer>
-                <ProgressivePortrait 
+                <HomeProgressivePortrait 
                     src={PortraitImage}
                     placeholderSrc={PlaceholderImage}
                 />

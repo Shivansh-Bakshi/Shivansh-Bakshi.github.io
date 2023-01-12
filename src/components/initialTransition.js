@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { transitionEffects } from '../styles/constants';
-import { InitialTransitionContainer, Transition } from '../styles';
+import { InitialTransitionContainer, InitialTransitionCore } from '../styles';
 
 const blackBox = {
     initial: {
@@ -16,7 +16,7 @@ const blackBox = {
 const InitialTransition = () => {
     return(
         <InitialTransitionContainer>
-            <Transition 
+            <InitialTransitionCore 
                 initial="initial"
                 animate="animate"
                 variants={blackBox}

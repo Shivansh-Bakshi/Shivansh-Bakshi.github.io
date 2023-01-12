@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { 
-    LogoContainer, 
-    LeftContainer, 
-    ListItem, 
-    PageLink, 
-    RightContainer, 
+    NavbarLogoContainer, 
+    NavbarLeftContainer, 
+    NavbarListItem, 
+    NavbarPageLink, 
+    NavbarRightContainer, 
     NavbarContainer, 
-    NavigationList, 
-    RightMenu, 
-    HamburgerImage, 
-    LeftMenu, 
-    LogoImage,
+    NavbarNavigationList, 
+    NavbarRightMenu, 
+    NavbarHamburgerImage, 
+    NavbarLeftMenu, 
+    NavbarLogoImage,
 } from '../styles';
 import LogoSVG from '../images/Logo.svg';
 import  RightHamburger from '../images/right_hamburger.svg';
@@ -60,33 +60,33 @@ const SubNavbar = ({ direction, data, set }) => {
     if (direction === 'left') {
         return (
             <>
-            <LeftContainer {...containerProps}>
-                <NavigationList>
-                    <ListItem><PageLink to="/blog" activeClassName='active'>Blog</PageLink></ListItem>
-                    <ListItem><PageLink to="/piano" activeClassName='active'>Piano</PageLink></ListItem>
-                </NavigationList>
-            </LeftContainer>
-            <LeftMenu onClick={handleShowNavbar} ref={wrapperRef}>
-                <HamburgerImage src={LeftHamburger} alt='left_hamburger' />
-            </LeftMenu>
+            <NavbarLeftContainer {...containerProps}>
+                <NavbarNavigationList>
+                    <NavbarListItem><NavbarPageLink to="/blog" activeClassName='active'>Blog</NavbarPageLink></NavbarListItem>
+                    <NavbarListItem><NavbarPageLink to="/piano" activeClassName='active'>Piano</NavbarPageLink></NavbarListItem>
+                </NavbarNavigationList>
+            </NavbarLeftContainer>
+            <NavbarLeftMenu onClick={handleShowNavbar} ref={wrapperRef}>
+                <NavbarHamburgerImage src={LeftHamburger} alt='left_hamburger' />
+            </NavbarLeftMenu>
             </>
         )
     }
 
     return (
         <>
-        <RightContainer {...containerProps}>
-            <NavigationList>
-                <ListItem><PageLink to="/" activeClassName='active'>Home</PageLink></ListItem>
-                <ListItem><PageLink to="/experience" activeClassName='active'>Experience</PageLink></ListItem>
-                <ListItem><PageLink to="/projects" activeClassName='active'>Projects</PageLink></ListItem>
-                <ListItem><PageLink to="/certificates" activeClassName='active'>Certificates</PageLink></ListItem>
-                <ListItem><PageLink to="/contact" activeClassName='active'>Contact</PageLink></ListItem>
-            </NavigationList>
-        </RightContainer>
-        <RightMenu onClick={handleShowNavbar} ref={wrapperRef}>
-            <HamburgerImage src={RightHamburger} alt='right_hamburger' />
-        </RightMenu>
+        <NavbarRightContainer {...containerProps}>
+            <NavbarNavigationList>
+                <NavbarListItem><NavbarPageLink to="/" activeClassName='active'>Home</NavbarPageLink></NavbarListItem>
+                <NavbarListItem><NavbarPageLink to="/experience" activeClassName='active'>Experience</NavbarPageLink></NavbarListItem>
+                <NavbarListItem><NavbarPageLink to="/projects" activeClassName='active'>Projects</NavbarPageLink></NavbarListItem>
+                <NavbarListItem><NavbarPageLink to="/certificates" activeClassName='active'>Certificates</NavbarPageLink></NavbarListItem>
+                <NavbarListItem><NavbarPageLink to="/contact" activeClassName='active'>Contact</NavbarPageLink></NavbarListItem>
+            </NavbarNavigationList>
+        </NavbarRightContainer>
+        <NavbarRightMenu onClick={handleShowNavbar} ref={wrapperRef}>
+            <NavbarHamburgerImage src={RightHamburger} alt='right_hamburger' />
+        </NavbarRightMenu>
 
         </>
     )
@@ -94,11 +94,11 @@ const SubNavbar = ({ direction, data, set }) => {
 
 const Logo = () => {
     return(
-        <LogoContainer>
+        <NavbarLogoContainer>
             <Link to='/'>
-            <LogoImage src={LogoSVG} alt='logo' />
+            <NavbarLogoImage src={LogoSVG} alt='logo' />
             </Link>
-        </LogoContainer>
+        </NavbarLogoContainer>
     )
 }
 

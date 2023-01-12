@@ -5,7 +5,7 @@ import { MAX_WIDTH } from "../device";
 import ProgressiveImage from "../../components/ProgressiveImage";
 import { motion } from "framer-motion";
 
-export const ProgressivePortrait = styled(ProgressiveImage)`
+export const HomeProgressivePortrait = styled(ProgressiveImage)`
     position: absolute;
     bottom: 0;
     right: 0;
@@ -27,7 +27,7 @@ export const ProgressivePortrait = styled(ProgressiveImage)`
     }
 `
 
-export const TextContainer = styled.p`
+export const HomeTextContainer = styled.p`
     ${fonts}
     
     position: relative;
@@ -47,7 +47,7 @@ export const TextContainer = styled.p`
     }
 `
 
-export const Emphasis = styled.p`
+export const HomeEmphasis = styled.p`
     ${fonts}
     
     position: relative;
@@ -69,7 +69,7 @@ export const Emphasis = styled.p`
 
 const buttonWidth = '200px';
 const buttonHeight = '70px';
-export const ButtonContainer = styled(motion.div)`
+export const HomeButtonContainer = styled(motion.div)`
     ${fonts}
 
     position: relative;
@@ -88,7 +88,7 @@ export const ButtonContainer = styled(motion.div)`
     }
 `
 
-export const ResumeLink = styled.a`
+export const HomeResumeLink = styled.a`
     font-family: 'Mulish', sans-serif;
     font-size: 25px;
     color: ${colors.LIGHT_OFF_WHITE};

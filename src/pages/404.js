@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { BodyContainerNCol } from '../styles/global';
-import { Error, Message } from '../styles';
+import { NotFoundError, NotFoundMessage } from '../styles';
 
 const NotFoundPage = () => {
     return (
         <BodyContainerNCol n={1}>
-            <Error>This Page Does Not Exist</Error>
-            <Message>Try navigating to another page.</Message>
+            <NotFoundError>This Page Does Not Exist</NotFoundError>
+            <NotFoundMessage>Try navigating to another page.</NotFoundMessage>
         </BodyContainerNCol>
     )
 }

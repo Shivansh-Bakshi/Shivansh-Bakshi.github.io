@@ -1,13 +1,13 @@
 import * as React from 'react';
 import {
-    ExposeFooterIcon,
-    ExposeFooterIconContainer,
+    FooterExposeIcon,
+    FooterExposeIconContainer,
     FooterContainer,
     FooterImage,
     FooterText,
-    MainFooter,
-    SocialsContainer,
-    TextWithImage
+    FooterCore,
+    FooterSocialsContainer,
+    FooterInlineTextContainer
 } from '../styles';
 import UpIcon from '../images/up.svg';
 import DownIcon from '../images/down.svg';
@@ -49,11 +49,11 @@ const FooterComponent = ({ data, set }) => {
 
     return(
         <FooterContainer>
-            <ExposeFooterIconContainer onClick={handleShowFooter}>
-                <ExposeFooterIcon src={showFooter ? DownIcon : UpIcon} alt='Arrow' />
-            </ExposeFooterIconContainer>
-            <MainFooter initial="initial" animate="animate" variants={footer} ref={wrapperRef}>
-                <SocialsContainer>
+            <FooterExposeIconContainer onClick={handleShowFooter}>
+                <FooterExposeIcon src={showFooter ? DownIcon : UpIcon} alt='Arrow' />
+            </FooterExposeIconContainer>
+            <FooterCore initial="initial" animate="animate" variants={footer} ref={wrapperRef}>
+                <FooterSocialsContainer>
                     <FooterText style={{opacity: '1', marginTop: 'auto', marginBottom: 'auto'}}>Contact Me:</FooterText>
                     <SocialIcon
                         bgColor='transparent'
@@ -83,15 +83,15 @@ const FooterComponent = ({ data, set }) => {
                         style={{
                             width: isTablet ? 40 : 50,
                         }} />
-                </SocialsContainer>
+                </FooterSocialsContainer>
                 <FooterText>This site uses essential cookies<br /></FooterText>
-                <TextWithImage>
+                <FooterInlineTextContainer>
                     <FooterText style={{ marginRight: '10px' }}>Made with</FooterText>
                     <FooterImage src={Heart} alt='Heart' />
                     <FooterText style={{ marginLeft: '10px' }}> using React w/ Gatsby</FooterText>
-                </TextWithImage>
+                </FooterInlineTextContainer>
                 <FooterText>© 2022-2023 Shivansh Bakshi</FooterText>
-            </MainFooter>
+            </FooterCore>
         </FooterContainer>
     )
 }

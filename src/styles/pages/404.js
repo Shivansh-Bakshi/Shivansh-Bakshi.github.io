@@ -3,7 +3,7 @@ import fonts from "../../fonts/fonts";
 import { colors } from "../constants";
 import { MAX_WIDTH } from "../device";
 
-export const Error = styled.h1`
+export const NotFoundError = styled.h1`
     ${fonts}
 
     margin: auto;
@@ -20,7 +20,7 @@ export const Error = styled.h1`
     }
 `
 
-export const Message = styled.p`
+export const NotFoundMessage = styled.p`
     ${fonts}
 
     margin: auto;

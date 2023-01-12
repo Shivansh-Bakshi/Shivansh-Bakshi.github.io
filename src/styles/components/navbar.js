@@ -15,7 +15,7 @@ export const NavbarContainer = styled.div`
     z-index: 50;
 `
 
-export const LeftContainer = styled(motion.span)`
+export const NavbarLeftContainer = styled(motion.span)`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -35,7 +35,7 @@ export const LeftContainer = styled(motion.span)`
     }
 `
 
-export const LeftMenu = styled.div`
+export const NavbarLeftMenu = styled.div`
     display: none;
 
     @media screen and (${MAX_WIDTH.LAPTOP}) {
@@ -49,7 +49,7 @@ export const LeftMenu = styled.div`
     }
 `
 
-export const LogoContainer = styled.span`
+export const NavbarLogoContainer = styled.span`
     position: absolute;
     top: 50%;
     left: 30%;
@@ -70,7 +70,7 @@ export const LogoContainer = styled.span`
     }
 `
 
-export const RightContainer = styled(motion.span)`
+export const NavbarRightContainer = styled(motion.span)`
     position: absolute;
     right: 0;
     top: 50%;
@@ -92,7 +92,7 @@ export const RightContainer = styled(motion.span)`
     }
 `
 
-export const RightMenu = styled.div`
+export const NavbarRightMenu = styled.div`
     display: none;
 
     @media screen and (${MAX_WIDTH.LAPTOP}) {
@@ -106,7 +106,7 @@ export const RightMenu = styled.div`
     }
 `
 
-export const NavigationList = styled.ul`
+export const NavbarNavigationList = styled.ul`
     display: flex;
     justify-content: space-between;
     list-style-type: none;
@@ -116,14 +116,14 @@ export const NavigationList = styled.ul`
     }
 `
 
-export const ListItem = styled.li`
+export const NavbarListItem = styled.li`
     @media screen and (${MAX_WIDTH.LAPTOP}) {
         margin-right: unset;
         margin-top: 22px;
     }
 `
 
-export const PageLink = styled(Link)`
+export const NavbarPageLink = styled(Link)`
     ${fonts}
 
     font-family: 'Mulish', sans-serif;
@@ -175,7 +175,7 @@ const Image = styled.img`
     }
 `
 
-export const HamburgerImage = styled(Image)`
+export const NavbarHamburgerImage = styled(Image)`
     width: 50px;
     filter: invert(99%) sepia(95%) saturate(12%) hue-rotate(226deg) brightness(116%) contrast(87%);
 
@@ -184,5 +184,5 @@ export const HamburgerImage = styled(Image)`
     }
 `
 
-export const LogoImage = styled(Image)`
+export const NavbarLogoImage = styled(Image)`
 `
