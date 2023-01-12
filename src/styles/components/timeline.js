@@ -4,25 +4,6 @@ import fonts from "../../fonts/fonts";
 import { colors, transparency } from "../constants";
 import { MAX_WIDTH } from "../device";
 
-export const TimelineLineContainer = styled.div`
-    height: 80%;
-    position: relative;
-
-    @media screen and (${MAX_WIDTH.TABLET}) {
-        height: 90%;
-        width: 100%;
-        top: 60px;
-    }
-
-    @media screen and (${MAX_WIDTH.MOBILEL}) {
-        top: 50px;
-    }
-
-    @media screen and (${MAX_WIDTH.MOBILEM}) {
-        top: 30px;
-    }
-`
-
 export const TimelineLine = styled.div`
     position: absolute;
     left: 30px;
@@ -36,46 +17,6 @@ export const TimelineLine = styled.div`
         width: 100%;
         border-right: unset;
         border-bottom: 3px solid ${colors.RED};
-    }
-`
-
-export const Timeline = styled.div`
-    position: absolute;
-    margin: 0 auto;
-    min-width: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-
-    @media screen and (${MAX_WIDTH.TABLET}) {
-        overflow-x: scroll;
-        overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-        white-space: nowrap;
-    }
-
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background-color: ${colors.DARK_BLUE + transparency[50]};
-        border-radius: 6px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: ${colors.YELLOW};
-        border-radius: 6px;
-
-        &:hover {
-            background-color: ${colors.LIGHT_BLUE};
-        }
-
-        &:active {
-            background-color: ${colors.RED};
-        }
     }
 `
 

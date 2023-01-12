@@ -1,6 +1,13 @@
 import * as React from 'react';
-import { BodyContainerNCol, PageTitle } from '../styles/global';
-import { Timeline, TimelineContainer, TimelineEntry, TimelineEntryContainer, TimelineLine, TimelineLineContainer, TimelineMarkerContainer, TimelineMarkerImage } from '../styles';
+import { BodyContainerNCol, PageTitle, PageContainer, PageOverflowContainer } from '../styles/global';
+import {
+    TimelineContainer,
+    TimelineEntry,
+    TimelineEntryContainer,
+    TimelineLine,
+    TimelineMarkerContainer,
+    TimelineMarkerImage
+} from '../styles';
 import VideoOverlayContextConsumer from '../contexts/videoOverlay';
 import { useMediaQuery } from '../utils/hooks';
 
@@ -86,9 +93,9 @@ const ExperiencePage = () => {
     return (
             <BodyContainerNCol n={1}>
                 <PageTitle>Experience</PageTitle>
-                <TimelineLineContainer>
+                <PageContainer>
                     <TimelineLine />
-                    <Timeline>
+                    <PageOverflowContainer>
                         <TimelineContainer initial="initial" animate="animate" variants={timelineVariants.container}>
                             <TimelineEntryComponent logo={DB} tablet={isTablet}>
                                 <ExperienceEntry
@@ -191,8 +198,8 @@ const ExperiencePage = () => {
                                     </ExperienceEntry>
                             </TimelineEntryComponent>
                         </TimelineContainer>
-                    </Timeline>
-                </TimelineLineContainer>
+                    </PageOverflowContainer>
+                </PageContainer>
             </BodyContainerNCol>
     )
 }
